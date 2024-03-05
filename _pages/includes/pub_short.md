@@ -1,7 +1,8 @@
+# 📝 Publications
 
-# 💻 Selected Research Papers
+**Yichao Tang**, Kangshun Li, Chuntao Wang, Shan Bian, Qiong Huang. ["A two-stage robust reversible watermarking using polar harmonic transform for high robustness and capacity."](https://www.sciencedirect.com/science/article/abs/pii/S0020025523013713) Information Sciences, 654 (2024): 119786. [**[Code]**](https://github.com/yichao-tang/PHT-RRW)
 
-My full paper list is shown at [my personal homepage](https://rayeren.github.io).
+
 
 #### 🎙 Audio and Speech Processing
 - ``ICLR 2021`` [FastSpeech 2: Fast and High-Quality End-to-End Text to Speech](https://arxiv.org/abs/2006.04558), **Yi Ren**, Chenxu Hu, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, Tie-Yan Liu
