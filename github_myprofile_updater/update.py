@@ -10,4 +10,4 @@ if __name__ == '__main__':
         f.write('\n\n')
         f.write(_intro)
         f.write('\n\n##')
-        f.write(_pub)
+        f.write(_pub_short)
