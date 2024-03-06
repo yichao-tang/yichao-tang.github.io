@@ -1,6 +1,6 @@
 # 📝 Publications
 
-### 🛡 Information Security
+### ⛑ Information Security
 
 **Yichao Tang**, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung. "A Robust Reversible Watermarking Scheme Using Attack-Simulation-Based Adaptive Normalization and Embedding." IEEE Transactions on Information Forensics and Security **(T-IFS)**, 2024. [**[Link]**](https://ieeexplore.ieee.org/document/10458701)
 
