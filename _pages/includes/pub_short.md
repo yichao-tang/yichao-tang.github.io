@@ -4,7 +4,7 @@
 
 **Yichao Tang**, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung. "A Robust Reversible Watermarking Scheme Using Attack-Simulation-Based Adaptive Normalization and Embedding." IEEE Transactions on Information Forensics and Security **(T-IFS)**, 2024. [**[Link]**](https://ieeexplore.ieee.org/document/10458701)
 
-**Yichao Tang**, Kangshun Li*, Chuntao Wang*, Shan Bian, Qiong Huang. "A two-stage robust reversible watermarking using polar harmonic transform for high robustness and capacity." Information Sciences **(IS)**, 2024. [**[Link]**](https://www.sciencedirect.com/science/article/abs/pii/S0020025523013713) [**[Code]**](https://github.com/yichao-tang/PHT-RRW)
+**Yichao Tang**, Kangshun Li*, Chuntao Wang*, Shan Bian, Qiong Huang. "A two-stage robust reversible watermarking using polar harmonic transform for high robustness and capacity." Information Sciences **(INS)**, 2024. [**[Link]**](https://www.sciencedirect.com/science/article/abs/pii/S0020025523013713) [**[Code]**](https://github.com/yichao-tang/PHT-RRW)
 
 **Yichao Tang**, Shuai Wang, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung. "A highly robust reversible watermarking scheme using embedding optimization and rounded error compensation." IEEE Transactions on Circuits and Systems for Video Technology **(T-CSVT)**, 2022. [**[Link]**](https://ieeexplore.ieee.org/document/9928284/) [**[Code]**](https://github.com/yichao-tang/PZMs-RRW)
 
