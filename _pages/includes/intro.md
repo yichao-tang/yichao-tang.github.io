@@ -1,4 +1,4 @@
-I am a Ph.D Candidate of [Prof. Chuntao Wang](www.scholat.com/wangchuntao) at South China Agricultural University (SCAU), and my research focuses on Information Security and Digital Watermarking. During my Ph.D studies, I visited Hong Kong Baptist University for academic exchange and collaborated with [Prof. Yiu-ming Cheung](https://www.comp.hkbu.edu.hk/~ymc).
+I am a Ph.D Candidate of [Prof. Chuntao Wang](https://www.scholat.com/wangchuntao) at South China Agricultural University (SCAU), and my research focuses on Information Security and Digital Watermarking. During my Ph.D studies, I visited Hong Kong Baptist University for academic exchange and collaborated with [Prof. Yiu-ming Cheung](https://www.comp.hkbu.edu.hk/~ymc).
 
 I obtained my Bachelor’s and Master’s degrees from East China Jiaotong University (ECJTU), where I studied evolutionary algorithms under the supervision of [Prof. Xuewen Xia](https://www.x-mol.com/groups/IOIP/people/50779). 
 
