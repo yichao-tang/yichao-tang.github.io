@@ -4,6 +4,6 @@ I obtained my Ph.D degree from South China Agricultural University (SCAU), where
 
 I obtained my Bachelor’s and Master’s degrees from East China Jiaotong University (ECJTU). There, I studied Evolutionary Algorithms under the guidance of [Prof. Xuewen Xia](https://www.x-mol.com/groups/IOIP/people/50779). 
 
-My research results have been published in several top-tier journals, such as IEEE Transactions on Information Forensics and Security (T-IFS), IEEE Transactions on Circuits and Systems for Video Technology (T-CSVT), and Information Sciences (INS). I serve as a reviewer for many SCI journals, such as T-IP, T-IFS, T-CSVT, and T-ASE. <!-- 注释 Artificial Intelligence Review, Journal of Big Data, Journal of Supercomputing, Cluster Computing, IEEE Access and IET Power Electronics. -->
+My research results have been published in several top-tier journals, such as IEEE Transactions on Information Forensics and Security (T-IFS), IEEE Transactions on Circuits and Systems for Video Technology (T-CSVT), and IEEE Transactions on Multimedia (T-MM). I serve as a reviewer for many SCI journals, such as T-IP, T-IFS, T-CSVT, T-MM, and AAAI. <!-- 注释 Information Fusion, T-ASE, Artificial Intelligence Review, Journal of Big Data, Journal of Supercomputing, Cluster Computing, IEEE Access and IET Power Electronics. -->
 
 My research interests include robust watermarking, reversible data hiding, and AIGC security. For **academic cooperation**, please feel free to email me at [yichao_tang@foxmail.com](mailto:yichao_tang@foxmail.com)
