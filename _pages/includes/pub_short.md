@@ -1,6 +1,12 @@
 # 📝 Publications
 
-### ⛑ Information Security
+### 🛡️ Information Security
+- **Yichao Tang**, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang\*. "DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing." IEEE International Conference on Acoustics, Speech and Signal Processing **(ICASSP)**, 2026. [**[Link]**](https://ieeexplore.ieee.org/abstract/document/11464215) [**[Code]**](https://github.com/yichao-tang/DNLMark)
+
+- Zhenliang Gan, Chunya Liu, **Yichao Tang**, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang\*. "GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization." Proceedings of the AAAI Conference on Artificial Intelligence **(AAAI)**, 2026. [**[Link]**](https://ojs.aaai.org/index.php/AAAI/article/view/37412) [**[Code]**](https://github.com/yichao-tang/GenPTW)
+
+- Mingyang Li, **Yichao Tang**, Yuliang Xue, Sheng Li, Zhenxing Qian\*, Xinpeng Zhang, Ji He, Hongda Li. "SLMark: Robust Watermarking Against Image Editing via Simulation-Based Noise Layer and Low-Frequency Embedding." International Conference on Cyber Resilience and Endogenous Safety \& Security **(CRESS)**, 2025. [**[Link]**](https://ieeexplore.ieee.org/abstract/document/11452609/)
+
 - **Yichao Tang**\#, Shuai Wang\#, Ruowei Han, Chuntao Wang\*. "A Novel Robust Reversible Watermarking Scheme Using Fractional-Order Polar Complex Exponential Transform." IEEE Transactions on Multimedia **(T-MM)**, 2025. [**[Link]**](https://ieeexplore.ieee.org/abstract/document/11207540/) [**[Code]**](https://github.com/yichao-tang/FrPCET-RRW)
 
 - **Yichao Tang**, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung. "A Robust Reversible Watermarking Scheme Using Attack-Simulation-Based Adaptive Normalization and Embedding." IEEE Transactions on Information Forensics and Security **(T-IFS)**, 2024. [**[Link]**](https://ieeexplore.ieee.org/document/10458701) [**[Code]**](https://github.com/yichao-tang/STDM-RRW)
