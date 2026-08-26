@@ -20,7 +20,13 @@
     <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
     <ul class="author__urls social-icons">
       {% if site.description %}
-        <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
+        <li class="author__position">
+        <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>
+        <span>
+        <span class="author__title">{{ site.description }}</span>
+        <span class="author__institution">{{ site.institution }}</span>
+        </span>
+        </li>
       {% endif %}
       {% if author.location %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
