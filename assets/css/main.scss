@@ -123,3 +123,24 @@ h1:before, .anchor:before {
 .page__content li {
     line-height: 1.6;
 }
+
+/* =========================================
+   Custom author name
+   ========================================= */
+
+.author__name {
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.author__name-en {
+    display: block;
+    font-size: 1em;
+}
+
+.author__name-cn {
+    display: block;
+    margin-top: 0.15em;
+    font-size: 0.68em;
+    font-weight: 400;
+}
