@@ -140,7 +140,22 @@ h1:before, .anchor:before {
 
 .author__name-cn {
     display: block;
-    margin-top: 0.15em;
-    font-size: 0.68em;
+    margin-top: 0.12em;
+    font-size: 0.8em;
     font-weight: 400;
+}
+
+
+/* Academic position and institution */
+.author__position > span {
+    display: inline-block;
+}
+
+.author__title,
+.author__institution {
+    display: block;
+}
+
+.author__institution {
+    margin-top: 0.15em;
 }
