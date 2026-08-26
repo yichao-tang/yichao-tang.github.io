@@ -107,3 +107,19 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+/* Main page content */
+.page__content {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Paragraph spacing */
+.page__content p {
+    margin-bottom: 1em;
+}
+
+/* Keep lists readable */
+.page__content li {
+    line-height: 1.6;
+}
