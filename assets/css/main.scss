@@ -147,8 +147,8 @@ h1:before, .anchor:before {
 
 
 /* Academic position and institution */
-.author__position > span {
-    display: inline-block;
+.author__position {
+    margin-bottom: 1em;
 }
 
 .author__title,
