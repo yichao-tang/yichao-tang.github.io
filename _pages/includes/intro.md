@@ -2,9 +2,7 @@ I am currently an Associate Professor (First Appointment) at South China Agricul
 
 Before joining SCAU, I was a Postdoctoral Fellow at the Multimedia & Artificial Intelligence Security Laboratory (MAS), College of Computer Science and Artificial Intelligence, Fudan University, under the supervision of [Prof. Xinpeng Zhang](https://cs.fudan.edu.cn/3f/d2/c25909a278482/page.htm) and [Prof. Zhenxing Qian](https://tomzqian.github.io/).
 
-I obtained my Ph.D. degree from SCAU, where I conducted research on information security and digital watermarking under the supervision of [Prof. Chuntao Wang](https://www.scholat.com/wangchuntao). I also received guidance from [Prof. Kangshun Li](https://yjsglxt.scau.edu.cn/open/WxXlbs/TeacherInfo.aspx?jsbh=LiKangShun20). During my Ph.D. studies, I visited Hong Kong Baptist University for academic exchange and collaborated with [Prof. Yiu-ming Cheung](https://www.comp.hkbu.edu.hk/~ymc). I also continue to collaborate with Prof. Chuntao Wang and her research team at SCAU.
-
-I obtained my Bachelor’s and Master’s degrees from East China Jiaotong University (ECJTU), where I conducted research on evolutionary algorithms under the guidance of [Prof. Xuewen Xia](https://www.x-mol.com/groups/IOIP/people/50779).
+I obtained my Ph.D. degree from SCAU under the supervision of [Prof. Chuntao Wang](https://www.scholat.com/wangchuntao), with additional guidance from [Prof. Kangshun Li](https://yjsglxt.scau.edu.cn/open/WxXlbs/TeacherInfo.aspx?jsbh=LiKangShun20). During my Ph.D. studies, I visited Hong Kong Baptist University for academic exchange and collaborated with [Prof. Yiu-ming Cheung](https://www.comp.hkbu.edu.hk/~ymc).
 
 My research has been published in international journals and conferences, including IEEE Transactions on Information Forensics and Security (T-IFS), IEEE Transactions on Multimedia (T-MM), IEEE Transactions on Circuits and Systems for Video Technology (T-CSVT), Information Sciences, AAAI, and ICASSP. I also serve as a reviewer for international journals and conferences in multimedia, information security, and artificial intelligence.
 
