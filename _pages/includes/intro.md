@@ -12,7 +12,14 @@ For academic collaboration, please feel free to contact me at [yichao_tang@foxma
 
 
 <!--
-My research results have been published in several top-tier journals, such as IEEE Transactions on Information Forensics and Security (T-IFS), IEEE Transactions on Circuits and Systems for Video Technology (T-CSVT), IEEE Transactions on Multimedia (T-MM), and Information Sciences (INS). I serve as a reviewer for many SCI journals, such as T-IP, T-IFS, T-CSVT, T-MM, T-ASE, Information Fusion, and AAAI.  注释 Information Fusion, T-ASE, Artificial Intelligence Review, Journal of Big Data, Journal of Supercomputing, Cluster Computing, IEEE Access and IET Power Electronics. 
+I am a Postdoctoral Fellow at the Multimedia & Artificial Intelligence Security Laboratory (MAS), School of Computer Science, Fudan University, under the supervision of Prof. Xinpeng Zhang and Prof. Zhenxing Qian.
 
-My research interests include robust watermarking, reversible data hiding, and AIGC security. For **academic cooperation**, please feel free to email me at [yichao_tang@foxmail.com](mailto:yichao_tang@foxmail.com)
+I obtained my Ph.D degree from South China Agricultural University (SCAU), where I studied Information Security and Digital Watermarking under the supervision of Prof. Chuntao Wang. Additionally, I was fortunate to receive guidance from Prof. Kangshun Li. During my Ph.D studies, I visited Hong Kong Baptist University for academic exchange and collaborated with Prof. Yiu-ming Cheung.
+
+I obtained my Bachelor’s and Master’s degrees from East China Jiaotong University (ECJTU). There, I studied Evolutionary Algorithms under the guidance of Prof. Xuewen Xia.
+
+My research results have been published in several top-tier journals, such as IEEE Transactions on Information Forensics and Security (T-IFS), IEEE Transactions on Circuits and Systems for Video Technology (T-CSVT), IEEE Transactions on Multimedia (T-MM), and Information Sciences (INS). I serve as a reviewer for many SCI journals, such as T-IP, T-IFS, T-CSVT, T-MM, T-ASE, Information Fusion, and AAAI.
+
+My research interests include robust watermarking, reversible data hiding, and AIGC security. For academic cooperation, please feel free to email me at yichao_tang@foxmail.com
+
 -->
