@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Yichao Tang (汤毅超)"
-description              : "Postdoctoral Fellow in the Multimedia & Artificial Intelligence Security Laboratory (MAS), Fudan University"
+description              : "Associate Professor (First Appointment), South China Agricultural University"
 repository               : "yichao-tang/yichaotang.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,8 +23,8 @@ baidu_site_verification  : code-ZxFK3f4pfb
 author:
   name             : "Yichao Tang (汤毅超)"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "Robust Watermarking; Reversible Data Hiding; AIGC Security"
-  location         : "Shanghai, China"
+  bio              : "Robust Watermarking; Reversible Data Hiding; Generative AI Security"
+  location         : "Guangzhou, China"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=KTWK22EAAAAJ"
