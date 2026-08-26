@@ -10,8 +10,8 @@
 
   <div class="author__content">
   <h3 class="author__name">
-    <span class="author__name-en">Yichao Tang</span>
-    <span class="author__name-cn">汤毅超</span>
+    <span class="author__name-en">{{ author.name }}</span>
+    <span class="author__name-cn">{{ author.name_cn }}</span>
   </h3>
   {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
 </div>
