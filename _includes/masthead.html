@@ -1,15 +1,26 @@
+{% assign language = page.lang | default: 'en' %}
+{% assign labels = site.data.i18n[language] %}
+{% assign translation_key = page.translation_key | default: 'about' %}
+{% assign language_routes = site.data.i18n.routes[translation_key] %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+      <nav id="site-nav" class="greedy-nav" aria-label="{{ labels.navigation_label }}">
+        <button type="button" class="hidden" aria-label="{{ labels.toggle_navigation }}"><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="#about-me">Homepage</a></li>
+          {% assign home_url = site.data.i18n.routes.home[language] %}
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ home_url | relative_url }}"{% if page.url == home_url %} aria-current="page"{% endif %}>{{ labels.navigation.home }}</a></li>
           {% for link in site.data.navigation.main %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% assign link_url = site.data.i18n.routes[link.key][language] | default: link.url %}
+            <li class="masthead__menu-item"><a href="{{ link_url | relative_url }}"{% if page.url == link_url %} aria-current="page"{% endif %}>{{ labels.navigation[link.key] | default: link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
+      </nav>
+      <nav class="language-switch" aria-label="{{ labels.language_navigation }}">
+        {% if language == 'en' %}<span lang="en" aria-current="true">EN</span>{% else %}<a href="{{ language_routes.en | relative_url }}" lang="en" hreflang="en" aria-label="Switch to English">EN</a>{% endif %}
+        <span class="language-switch__separator" aria-hidden="true">/</span>
+        {% if language == 'zh' %}<span lang="zh-CN" aria-current="true">中文</span>{% else %}<a href="{{ language_routes.zh | relative_url }}" lang="zh-CN" hreflang="zh-CN" aria-label="切换到中文">中文</a>{% endif %}
       </nav>
     </div>
   </div>

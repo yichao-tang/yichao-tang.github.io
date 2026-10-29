@@ -1,14 +1,16 @@
 <!-- begin SEO -->
+{% assign language = page.lang | default: 'en' %}
+{% assign labels = site.data.i18n[language] %}
 {% if site.url %}
   {% assign seo_url = site.url %}
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
 {% if site.url %}
-  {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}
+  {% assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
 {% endif %}
 
-<title>{{ site.title }} - Homepage</title>
+<title>{{ site.title }} - {% if page.title != "" and page.title %}{{ page.title | escape }}{% else %}{{ labels.home_title }}{% endif %}</title>
 
 {% assign seo_description = page.description | default: page.excerpt | default: site.description %}
 {% if seo_description %}
@@ -29,13 +31,20 @@
   {% assign seo_author_twitter = seo_author_twitter | replace: "@", "" %}
 {% endif %}
 
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="{{ labels.og_locale }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ site.title }}">
 
 {% if seo_url %}
-  <link rel="canonical" href="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
-  <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
+  <link rel="canonical" href="{{ page.url | replace: "/index.html", "/" | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | replace: "/index.html", "/" | absolute_url }}">
+{% endif %}
+
+{% if page.translation_key %}
+  {% assign language_routes = site.data.i18n.routes[page.translation_key] %}
+  <link rel="alternate" hreflang="en" href="{{ language_routes.en | absolute_url }}">
+  <link rel="alternate" hreflang="zh-CN" href="{{ language_routes.zh | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ language_routes.en | absolute_url }}">
 {% endif %}
 
 {% if page.excerpt %}

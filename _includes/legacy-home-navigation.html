@@ -1,0 +1,21 @@
+<script>
+(function () {
+  var legacyDestinations = {
+    '#about-me': {{ '/about/' | relative_url | jsonify }},
+    '#-publications': {{ '/publications/' | relative_url | jsonify }},
+    '#-projects': {{ '/about/#-projects' | relative_url | jsonify }},
+    '#-awards': {{ '/about/#-awards' | relative_url | jsonify }},
+    '#-education': {{ '/about/#-education' | relative_url | jsonify }}
+  };
+
+  function redirectLegacyHomeHash() {
+    var hash = window.location.hash;
+    if (Object.prototype.hasOwnProperty.call(legacyDestinations, hash)) {
+      window.location.replace(legacyDestinations[hash]);
+    }
+  }
+
+  redirectLegacyHomeHash();
+  window.addEventListener('hashchange', redirectLegacyHomeHash);
+}());
+</script>

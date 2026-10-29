@@ -3,18 +3,18 @@ permalink: /
 title: ""
 excerpt: ""
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+lang: en
+translation_key: home
 ---
 
-<span class='anchor' id='about-me'></span>
-{% include_relative includes/intro.md %}
+I am currently an Associate Professor (First Appointment) at South China Agricultural University (SCAU). My research focuses on robust watermarking, reversible data hiding, and generative AI security.
 
-{% include_relative includes/pub_short.md %}
+Previously, I was a Postdoctoral Fellow at Fudan University's Multimedia & Artificial Intelligence Security Laboratory (MAS), supervised by [Prof. Xinpeng Zhang](https://cs.fudan.edu.cn/c5/87/c30604a443783/page.htm) and [Prof. Zhenxing Qian](https://tomzqian.github.io/). I received my Ph.D. from SCAU in 2024, supervised by [Prof. Chuntao Wang](https://www.scholat.com/wangchuntao), with additional guidance from [Prof. Kangshun Li](https://yjsglxt.scau.edu.cn/open/WxXlbs/TeacherInfo.aspx?jsbh=LiKangShun20).
 
-{% include_relative includes/projects.md %}
+During my Ph.D., I visited Hong Kong Baptist University and collaborated with [Prof. Yiu-ming Cheung](https://www.comp.hkbu.edu.hk/~ymc).
 
-{% include_relative includes/awards.md %}
+For academic collaboration, please contact me at [yichao_tang@foxmail.com](mailto:yichao_tang@foxmail.com).
 
-{% include_relative includes/others.md %}
+{% include selected-publications.html %}
+
+{% include legacy-home-navigation.html %}

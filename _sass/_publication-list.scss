@@ -1,0 +1,60 @@
+/* Title-first bibliography, rendered from the unchanged original Markdown. */
+.publication-list {
+  .publication-list__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em 1.2em;
+    margin-bottom: 0.55em;
+    font-size: 0.9em;
+  }
+
+  .publication-list__legend {
+    margin-bottom: 1.4em;
+    font-size: 0.875em;
+  }
+
+  .publication-list__group {
+    margin-bottom: 1.8em;
+  }
+
+  .publication-list__group > h2 {
+    margin: 1.5em 0 0.8em;
+    font-size: 1.1em;
+    line-height: 1.4;
+    scroll-margin-top: 4.5em;
+  }
+
+  .publication-list__entry {
+    margin-bottom: 1.25em;
+  }
+
+  .publication-list__entry > h3 {
+    margin: 0 0 0.3em;
+    font-size: 1em;
+    line-height: 1.45;
+
+    a {
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  .publication-list__authors,
+  .publication-list__venue {
+    margin: 0 0 0.25em;
+    font-size: 0.925em;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+
+  .publication-list__links {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+
+    a {
+      display: inline-block;
+      padding: 0.15em 0;
+    }
+  }
+}
