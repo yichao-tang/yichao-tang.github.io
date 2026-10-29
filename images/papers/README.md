@@ -8,8 +8,10 @@ redrawn, removed, or generated.
 
 Each homepage thumbnail is a proportionally resized 1200-pixel-wide WebP. The
 larger PNG linked from the thumbnail preserves the original figure crop at high
-resolution. Display uses `object-fit: contain`, without stretching or cropping
-the figure to fill its reserved display area.
+resolution. Homepage previews fit within their column width and a 180-pixel
+height limit, without stretching or cropping. This keeps a portrait figure from
+adding excessive height to its publication row. Clicking opens the complete PNG;
+clicking it again restores the page. Figures do not form a navigable gallery.
 
 Coordinates below are PDF points, origin at the top-left: `[left, top, right,
 bottom]`. PDF page numbers are one-based.
