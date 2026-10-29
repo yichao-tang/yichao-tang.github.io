@@ -9,7 +9,7 @@ author_profile: true
 
 {% include_relative includes/pub_short.md %}
 
-{% include_relative includes/projects.md %}
+{% include_relative includes/archive/projects-2026-10-29.md %}
 
 {% include_relative includes/awards.md %}
 

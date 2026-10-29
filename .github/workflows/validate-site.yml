@@ -9,6 +9,7 @@ on:
       - '_layouts/**'
       - '_pages/**'
       - '_sass/**'
+      - '_tools/**'
       - 'assets/**'
       - 'images/**'
       - '.github/workflows/validate-site.yml'
@@ -27,6 +28,8 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Verify the complete publication list
+        run: python3 _tools/check_publications.py _site
       - name: Keep the rendered website for review
         uses: actions/upload-artifact@v6
         with:

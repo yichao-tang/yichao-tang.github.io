@@ -4,4 +4,5 @@ title: "Publications"
 author_profile: true
 ---
 
-{% include_relative includes/pub_short.md %}
+{% capture publications_source %}{% include_relative includes/pub_short.md %}{% endcapture %}
+{% include publications-list.html source=publications_source %}

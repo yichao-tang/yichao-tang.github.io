@@ -40,19 +40,26 @@ The refresh keeps these original source files byte-for-byte:
 
 - `_pages/includes/intro.md`
 - `_pages/includes/pub_short.md`
-- `_pages/includes/projects.md`
+- `_pages/includes/archive/projects-2026-10-29.md` (the original `_pages/includes/projects.md`)
 - `_pages/includes/awards.md`
 - `_pages/includes/others.md`
 
 The main navigation contains Homepage, Publications, and About Me. The homepage
-shows a short introduction and five selected publications. `/publications/`
-contains all 15 publications. `/about/` contains the full original biography,
-research projects, awards, and education, by including the unchanged source files
-above.
+directly introduces the current appointment, research interests, postdoctoral and
+Ph.D. background, academic exchange, and email, followed by five selected
+publications. `/publications/` contains all 15 publications in a title-first
+layout, rendered from the unchanged `pub_short.md`. The build checks every title,
+author list, venue/year, and Paper/Code link against that source with
+`python3 _tools/check_publications.py _site`. `/about/` contains the full original biography,
+research projects, awards, and education. The current projects include contains
+six entries: the five original projects and the added General Program project
+62672118, placed immediately above project 62572125. Its dates and `Ongoing`
+status are retained as provided.
 
 Compatibility routes remain directly accessible without occupying the main
-navigation: `/experience/` retains the original projects, awards, and education;
-`/profile-2026-10-29/` retains the complete original combination. `/about.html`
+navigation: `/experience/` retains all projects, awards, and education;
+`/profile-2026-10-29/` retains the complete original combination, including the
+five-project snapshot from `includes/archive/projects-2026-10-29.md`. `/about.html`
 continues to redirect to `/about/`.
 
 The five old root-page fragments are handled by a fixed compatibility mapping:
@@ -61,5 +68,6 @@ The five old root-page fragments are handled by a fixed compatibility mapping:
 `/about/`. Unknown fragments are left unchanged. These redirects do not add
 duplicate navigation links to the homepage body.
 
-All 15 publications, 5 research projects, 4 awards, and 3 education entries remain.
+All 15 publications, 6 current research projects, 4 awards, and 3 education entries
+remain. The frozen original profile continues to contain the original 5 projects.
 Existing HTML comments remain comments rather than being promoted to public text.
