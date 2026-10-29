@@ -155,6 +155,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-redirect-from
   - jemoji
 
 
