@@ -51,9 +51,9 @@ publications. `/publications/` contains all 15 publications in a title-first
 layout, rendered from the unchanged `pub_short.md`. The build checks every title,
 author list, venue/year, and Paper/Code link against that source with
 `python3 _tools/check_publications.py _site`. `/about/` contains the complete
-biography, research projects, awards, and education. The biography records the
-Fudan school name on entry and its change during the postdoctoral appointment,
-as confirmed by the author. The current projects include contains seven entries:
+biography, research projects, awards, and education. The biography uses a single
+Fudan college name in each language, as confirmed by the author. The current
+projects include contains seven entries:
 the five original projects, General Program project 62672118 immediately above
 62572125, and project 62066014 immediately after 62172165. Their dates and status
 are retained as provided.
