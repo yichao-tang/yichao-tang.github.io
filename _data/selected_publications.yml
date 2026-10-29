@@ -4,14 +4,13 @@
   authors: "<strong>Yichao Tang</strong>, Zhuangxi Yao, Yingxi Huang, Chuntao Wang*, Shijun Xiang."
   venue: IEEE T-IFS
   year: 2026
-  summary: "Expands and equalizes decoding regions for more robust extraction, and reduces quantization distortion while retaining exact image recovery without attacks."
+  summary: "Widens watermark decoding regions to resist image changes while keeping embedding distortion low."
   paper_url: https://ieeexplore.ieee.org/document/11753674
   code_url: https://github.com/yichao-tang/QS-QIM-RRW
   image: /images/papers/qs-qim-figure4.webp
   image_full: /images/papers/qs-qim-figure4.png
   image_width: 1200
   image_height: 685
-  figure_label: "Fig. 4. Quantization strips"
   image_alt: "QS-QIM Figure 4: enlarged decoding regions equalized into uniform strips, with codeword lines and decoding boundaries."
 
 - id: genptw
@@ -20,15 +19,14 @@
   authors: "Zhenliang Gan, Chunya Liu, <strong>Yichao Tang</strong>, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang*."
   venue: AAAI
   year: 2026
-  summary: "Combines semantic and spatial watermark cues to trace image provenance and locate edits, with support for both in-generation and post-generation embedding."
+  summary: "Adds source tracing and edit localization to existing image generators with a single watermark."
   paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/37412
   code_url: https://github.com/yichao-tang/GenPTW
-  image: /images/papers/genptw-overview.webp
-  image_full: /images/papers/genptw-overview.png
+  image: /images/papers/genptw-method.webp
+  image_full: /images/papers/genptw-method.png
   image_width: 1200
-  image_height: 562
-  figure_label: "Fig. 1. Embedding and extraction"
-  image_alt: "GenPTW overview showing image generation, watermark embedding, editing, provenance tracing and tamper localization."
+  image_height: 472
+  image_alt: "GenPTW method with attention-based and spatial watermark fusion, followed by joint watermark extraction and edit localization."
 
 - id: dnlmark
   short_name: DNLMark
@@ -36,14 +34,13 @@
   authors: "<strong>Yichao Tang</strong>, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang*."
   venue: ICASSP
   year: 2026
-  summary: "Trains against image-space distortions and latent-space editing simulations, using stable low-frequency VAE features to improve watermark recovery after conventional processing and semantic edits."
+  summary: "Trains on common image distortions and simulated AI edits to improve watermark recovery."
   paper_url: https://ieeexplore.ieee.org/abstract/document/11464215
   code_url: https://github.com/yichao-tang/DNLMark
   image: /images/papers/dnlmark-overview.webp
   image_full: /images/papers/dnlmark-overview.png
   image_width: 1200
   image_height: 508
-  figure_label: "Fig. 1. Dual-noise training"
   image_alt: "DNLMark architecture with low-frequency watermark embedding, image noise for conventional distortions, latent noise for simulated semantic edits, and watermark extraction."
 
 - id: frpcet-rrw
@@ -52,15 +49,14 @@
   authors: "<strong>Yichao Tang</strong>#, Shuai Wang#, Ruowei Han, Chuntao Wang*."
   venue: IEEE T-MM
   year: 2025
-  summary: "Embeds bits in differences between paired moment magnitudes, reducing quantization error while preserving robust extraction and exact recovery from intact images."
+  summary: "Uses feature differences and improved quantization to embed watermarks with less image distortion."
   paper_url: https://ieeexplore.ieee.org/abstract/document/11207540/
   code_url: https://github.com/yichao-tang/FrPCET-RRW
-  image: /images/papers/frpcet-figure4.webp
-  image_full: /images/papers/frpcet-figure4.png
+  image: /images/papers/frpcet-quantization.webp
+  image_full: /images/papers/frpcet-quantization.png
   image_width: 1200
-  image_height: 864
-  figure_label: "Fig. 4. Extraction and recovery"
-  image_alt: "FrPCET Figure 4: watermark extraction from the received image, with original-image recovery only on the unattacked branch."
+  image_height: 1496
+  image_alt: "Four optimized quantization cases showing how adjacent intervals reduce watermark embedding errors."
 
 - id: stdm-rrw
   short_name: STDM-RRW
@@ -68,12 +64,11 @@
   authors: "<strong>Yichao Tang</strong>, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung."
   venue: IEEE T-IFS
   year: 2024
-  summary: "Uses simulated attacks to normalize stable PHT moments and tune multi-level embedding strength, improving robustness while preserving lossless recovery without attacks."
+  summary: "Tests likely attacks to choose stable image features and adjust watermark strength."
   paper_url: https://ieeexplore.ieee.org/document/10458701
   code_url: https://github.com/yichao-tang/STDM-RRW
-  image: /images/papers/stdm-rrw-extraction.webp
-  image_full: /images/papers/stdm-rrw-extraction.png
+  image: /images/papers/stdm-multilevel-quantization.webp
+  image_full: /images/papers/stdm-multilevel-quantization.png
   image_width: 1200
-  image_height: 1205
-  figure_label: "Fig. 3. Extraction and recovery"
-  image_alt: "STDM-RRW Figure 3: extraction of the watermark after attack, and recovery of the original image when unattacked."
+  image_height: 930
+  image_alt: "The proposed multi-level STDM quantizer, showing four levels of embedding strength and their quantization intervals."

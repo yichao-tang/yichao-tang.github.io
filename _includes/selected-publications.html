@@ -4,10 +4,9 @@
   <article class="selected-publication" aria-labelledby="paper-{{ paper.id }}">
     {% if paper.image %}
     <figure class="selected-publication__figure">
-      <a class="selected-publication__figure-link image-popup" href="{{ paper.image_full | default: paper.image | relative_url }}" title="{{ paper.short_name | escape }} — {{ paper.figure_label | escape }}" aria-label="View the {{ paper.short_name }} figure at full size">
+      <a class="selected-publication__figure-link image-popup" href="{{ paper.image_full | default: paper.image | relative_url }}" aria-label="View the {{ paper.short_name }} figure at full size">
         <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt | escape }}" loading="lazy" width="{{ paper.image_width }}" height="{{ paper.image_height }}">
       </a>
-      <figcaption>{{ paper.figure_label | escape }}</figcaption>
     </figure>
     {% endif %}
     <div class="selected-publication__text">
