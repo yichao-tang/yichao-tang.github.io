@@ -3,6 +3,7 @@
 <h1>{{ labels.selected_publications | escape }}</h1>
 <div class="selected-publications">
   {% for paper in site.data.selected_publications %}
+  {% assign venue_data = site.data.publication_venues[paper.venue_key] %}
   {% assign summary = paper.summary %}
   {% assign image_alt = paper.image_alt %}
   {% if lang == 'zh' %}
@@ -20,7 +21,7 @@
     <div class="selected-publication__text">
       <h2 class="selected-publication__title" id="paper-{{ paper.id }}"><a href="{{ paper.paper_url }}">{{ paper.title | escape }}</a></h2>
       <p class="selected-publication__authors">{{ paper.authors }}</p>
-      <p class="selected-publication__venue"><strong>{{ paper.venue | escape }}, {{ paper.year }}</strong></p>
+      <p class="selected-publication__venue"><strong><abbr title="{{ venue_data.name | escape }}">{{ paper.venue | escape }}, {{ paper.year }}</abbr></strong>{% include publication-metrics.html venue=venue_data %}</p>
       <p class="selected-publication__summary">{{ summary | escape }}</p>
       <p class="selected-publication__links"><a href="{{ paper.paper_url }}">[{{ labels.paper | escape }}]</a> <a href="{{ paper.code_url }}">[{{ labels.code | escape }}]</a></p>
     </div>

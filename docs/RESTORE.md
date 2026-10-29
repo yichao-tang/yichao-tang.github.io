@@ -1,4 +1,36 @@
-# Restore the website before the October 29, 2026 refresh
+# Website restore points
+
+## Before the publication metrics and figure-zoom release
+
+The previous live bilingual website is preserved exactly at:
+
+- Commit: `046a74a5ca147699c02f0541ab9897b01a1a1e2b`
+- Backup branch: [`backup/pre-publication-metrics-2026-10-29`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-publication-metrics-2026-10-29)
+- [Download that source ZIP](https://github.com/yichao-tang/yichao-tang.github.io/archive/046a74a5ca147699c02f0541ab9897b01a1a1e2b.zip)
+
+Leave the backup branch unchanged. It preserves both languages before adding
+CCF/JCR/JIF labels and the revised image interaction. A complete Git bundle and
+source ZIP were also saved outside the working checkout, alongside the earlier
+original-profile backups.
+
+For an immediate undo, use **Revert** on the merged publication-metrics pull
+request and merge the resulting restore pull request. To restore the exact
+snapshot after subsequent edits, use a clean checkout and a new branch:
+
+```powershell
+git fetch origin
+git switch -c restore/pre-publication-metrics origin/main
+git restore --source=046a74a5ca147699c02f0541ab9897b01a1a1e2b --staged --worktree -- .
+git diff --cached --stat
+git commit -m "Restore bilingual homepage before publication metrics and zoom changes"
+git push -u origin restore/pre-publication-metrics
+```
+
+Open and merge a pull request to `main`, then wait for GitHub Pages deployment.
+This uses a normal commit and does not rewrite history or require a force push.
+The exact-snapshot method intentionally also removes later source changes.
+
+## Original homepage before the October 29, 2026 refresh
 
 The starting version is preserved at:
 

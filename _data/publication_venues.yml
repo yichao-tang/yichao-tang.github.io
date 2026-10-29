@@ -1,0 +1,145 @@
+# Venue-level labels are shared by Home and Publications in both languages.
+# Sources, release dates and the category-selection rule: docs/PUBLICATION-METRICS.md.
+aaai:
+  match: Proceedings of the AAAI Conference
+  name: Proceedings of the AAAI Conference on Artificial Intelligence
+  short_name: AAAI
+  ccf: A
+  ccf_year: 2026
+icassp:
+  match: IEEE International Conference on Acoustics
+  name: IEEE International Conference on Acoustics, Speech and Signal Processing
+  short_name: ICASSP
+  ccf: B
+  ccf_year: 2026
+cress:
+  match: International Conference on Cyber Resilience
+  name: International Conference on Cyber Resilience and Endogenous Safety & Security
+  short_name: CRESS
+tifs:
+  match: IEEE Transactions on Information Forensics and Security
+  name: IEEE Transactions on Information Forensics and Security
+  short_name: IEEE T-IFS
+  ccf: A
+  ccf_year: 2026
+  jcr:
+    release: 2026
+    year: 2025
+    category: Computer Science, Theory & Methods
+    rank: 10
+    total: 146
+    quartile: Q1
+    percentile: "93.5"
+tmm:
+  match: IEEE Transactions on Multimedia
+  name: IEEE Transactions on Multimedia
+  short_name: IEEE T-MM
+  ccf: A
+  ccf_year: 2026
+  jcr:
+    release: 2026
+    year: 2025
+    snapshot: June 2026 release
+    category: Computer Science, Software Engineering
+    rank: 3
+    total: 128
+    quartile: Q1
+    percentile: "98.0"
+ins:
+  match: Information Sciences
+  name: Information Sciences
+  short_name: Information Sciences
+  ccf: B
+  ccf_year: 2026
+  jcr:
+    release: 2026
+    year: 2025
+    category: Computer Science, Information Systems
+    rank: 49
+    total: 267
+    quartile: Q1
+    percentile: "81.8"
+tcsvt:
+  match: IEEE Transactions on Circuits and Systems for Video Technology
+  name: IEEE Transactions on Circuits and Systems for Video Technology
+  short_name: IEEE T-CSVT
+  ccf: B
+  ccf_year: 2026
+  jcr:
+    release: 2026
+    year: 2025
+    category: Engineering, Electrical & Electronic
+    rank: 13
+    total: 369
+    quartile: Q1
+    percentile: "96.6"
+ijcsm:
+  match: International Journal of Computing Science and Mathematics
+  name: International Journal of Computing Science and Mathematics
+  short_name: IJCSM
+  jcr:
+    release: 2026
+    year: 2025
+    category: Engineering, Multidisciplinary
+    rank: 151
+    total: 178
+    quartile: Q4
+    percentile: "15.4"
+ijcini:
+  match: International Journal of Cognitive Informatics and Natural Intelligence
+  name: International Journal of Cognitive Informatics and Natural Intelligence
+  short_name: IJCINI
+  jcr:
+    release: 2026
+    year: 2025
+    category: Computer Science, Artificial Intelligence
+    rank: 202
+    total: 210
+    quartile: Q4
+    percentile: "4.0"
+computing:
+  match: "Computing, "
+  name: Computing
+  short_name: Computing
+  jcr:
+    release: 2026
+    year: 2025
+    category: Computer Science, Theory & Methods
+    rank: 41
+    total: 146
+    quartile: Q2
+    percentile: "72.3"
+access:
+  match: IEEE Access
+  name: IEEE Access
+  short_name: IEEE Access
+  jcr:
+    release: 2026
+    year: 2025
+    category: Engineering, Electrical & Electronic
+    rank: 124
+    total: 369
+    quartile: Q2
+    percentile: "66.5"
+ssci:
+  match: IEEE Symposium Series on Computational Intelligence
+  name: IEEE Symposium Series on Computational Intelligence
+  short_name: IEEE SSCI
+cec:
+  match: IEEE Congress on Evolutionary Computation
+  name: IEEE Congress on Evolutionary Computation
+  short_name: IEEE CEC
+  ccf: C
+  ccf_year: 2026
+jocs:
+  match: Journal of computational science
+  name: Journal of Computational Science
+  short_name: Journal of Computational Science
+  jcr:
+    release: 2026
+    year: 2025
+    category: Computer Science, Theory & Methods
+    rank: 37
+    total: 146
+    quartile: Q2
+    percentile: "75.0"

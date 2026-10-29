@@ -58,3 +58,18 @@
     }
   }
 }
+
+/* One quiet metadata line; wrap between complete labels on small screens. */
+.selected-publication__venue,
+.publication-list__venue {
+  abbr[title] {
+    border-bottom: 0;
+    text-decoration: none;
+  }
+
+  .publication-metric {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: normal;
+  }
+}
