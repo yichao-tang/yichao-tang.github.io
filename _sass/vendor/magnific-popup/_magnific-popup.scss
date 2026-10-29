@@ -1,5 +1,50 @@
 /* Magnific Popup CSS */
 
+// The theme applies transition: all to figures and images. Visibility must
+// switch immediately here so the static large image cannot linger behind
+// the animated copy while it returns to its thumbnail.
+.paper-figure-popup .mfp-content,
+.paper-figure-popup .mfp-content * {
+  -webkit-transition: none;
+  transition: none;
+}
+
+// Keep a visible margin around enlarged figures instead of filling the window.
+.paper-figure-popup img.mfp-img {
+  max-width: 70vw;
+  max-height: 70vh;
+  padding: 0;
+}
+
+.paper-figure-popup .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+
+.paper-figure-popup .mfp-figure .mfp-close {
+  top: -32px;
+}
+
+@media (max-width: 767px) {
+  .paper-figure-popup img.mfp-img {
+    max-width: 90vw;
+  }
+}
+
+// Match the backdrop to the thumbnail-to-image transform animation.
+.mfp-bg.paper-figure-popup {
+  opacity: 0;
+  transition: opacity 300ms ease;
+
+  &.mfp-ready {
+    opacity: 0.65;
+  }
+
+  &.mfp-removing {
+    opacity: 0;
+  }
+}
+
 @import "settings";
 
 ////////////////////////

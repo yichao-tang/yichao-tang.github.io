@@ -3,6 +3,7 @@
   title: "A Two-Stage Robust Reversible Image Watermarking Scheme Using 2D Lattice QIM With Quantization Strips"
   authors: "<strong>Yichao Tang</strong>, Zhuangxi Yao, Yingxi Huang, Chuntao Wang*, Shijun Xiang."
   venue: IEEE T-IFS
+  venue_key: tifs
   year: 2026
   summary: "Widens watermark decoding regions to resist image changes while keeping embedding distortion low."
   summary_zh: "拓宽解码区域，在控制图像失真的同时提高水印鲁棒性。"
@@ -20,6 +21,7 @@
   title: "GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization"
   authors: "Zhenliang Gan, Chunya Liu, <strong>Yichao Tang</strong>, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang*."
   venue: AAAI
+  venue_key: aaai
   year: 2026
   summary: "Adds copyright protection and tamper localization to existing image generators with a single watermark."
   summary_zh: "让现有图像生成模型通过同一水印实现版权保护与篡改定位。"
@@ -37,6 +39,7 @@
   title: "DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing"
   authors: "<strong>Yichao Tang</strong>, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang*."
   venue: ICASSP
+  venue_key: icassp
   year: 2026
   summary: "Trains on common image distortions and simulated AIGC edits to improve watermark recovery."
   summary_zh: "结合常见图像失真和模拟 AIGC 编辑进行训练，提高水印提取能力。"
@@ -54,6 +57,7 @@
   title: "A Novel Robust Reversible Watermarking Scheme Using Fractional-Order Polar Complex Exponential Transform"
   authors: "<strong>Yichao Tang</strong>#, Shuai Wang#, Ruowei Han, Chuntao Wang*."
   venue: IEEE T-MM
+  venue_key: tmm
   year: 2025
   summary: "Uses feature differences and improved quantization to embed watermarks with less image distortion."
   summary_zh: "利用特征差值和改进的量化策略，以较小图像失真嵌入水印。"
@@ -71,6 +75,7 @@
   title: "A Robust Reversible Watermarking Scheme Using Attack-Simulation-Based Adaptive Normalization and Embedding"
   authors: "<strong>Yichao Tang</strong>, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung."
   venue: IEEE T-IFS
+  venue_key: tifs
   year: 2024
   summary: "Tests likely attacks to choose stable image features and adjust watermark strength."
   summary_zh: "通过攻击模拟选择稳定的图像特征，并调整水印嵌入强度。"

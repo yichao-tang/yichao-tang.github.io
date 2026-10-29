@@ -1,0 +1,11 @@
+{%- assign metrics = include.venue -%}
+{%- if metrics.ccf -%}
+ <span class="publication-metric" title="CCF {{ metrics.ccf_year }}">&nbsp;· CCF {{ metrics.ccf | escape }}</span>
+{%- endif -%}
+{%- if metrics.jcr -%}
+{%- capture metric_context -%}JCR {{ metrics.jcr.release }} ({{ metrics.jcr.year }} data){% if metrics.jcr.snapshot %}, {{ metrics.jcr.snapshot }}{% endif %}: {{ metrics.jcr.category }}{% if metrics.jcr.rank %}; {{ metrics.jcr.rank }}/{{ metrics.jcr.total }}{% endif %}.{% if metrics.jcr.percentile %} Highest JIF percentile among the journal's JCR categories.{% endif %}{%- endcapture -%}
+ <span class="publication-metric" title="{{ metric_context | escape }}">&nbsp;· JCR {{ metrics.jcr.quartile | escape }}</span>
+{%- if metrics.jcr.percentile -%}
+ <span class="publication-metric" title="{{ metric_context | escape }}">&nbsp;· JIF percentile: {{ metrics.jcr.percentile | escape }}</span>
+{%- endif -%}
+{%- endif -%}

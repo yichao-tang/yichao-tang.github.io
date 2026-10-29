@@ -41,7 +41,9 @@ def source_entries():
         result.append({
             "title": title.strip(),
             "authors": plain_markdown(authors),
-            "venue": plain_markdown(venue),
+            # The display uses metadata separators rather than a citation's
+            # terminal full stop; retain every venue word and the exact year.
+            "venue": plain_markdown(venue)[:-1],
             "paper": paper.group(1),
             "code": code.group(1) if code else None,
         })
@@ -78,6 +80,8 @@ class PublicationParser(HTMLParser):
                 self.current["paper"] = url
             elif url.startswith("https://github.com/"):
                 self.current["code"] = url
+        elif tag == "span" and "publication-metric" in classes:
+            self.field = None
 
     def handle_data(self, data):
         if self.current is not None and self.field:

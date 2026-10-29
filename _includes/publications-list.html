@@ -36,11 +36,21 @@ page against every original field and link.
     {% assign title = fields[1] | strip %}
     {% assign details = fields[2] | strip %}
     {% assign venue = details | split: '[**[Link]**]' | first | strip | replace: '\&', '&' %}
+    {% assign venue_display = venue %}
+    {% assign venue_last_character = venue | slice: -1, 1 %}
+    {% if venue_last_character == '.' %}
+      {% assign venue_display_length = venue.size | minus: 1 %}
+      {% assign venue_display = venue | slice: 0, venue_display_length %}
+    {% endif %}
+    {% assign venue_data = nil %}
+    {% for candidate in site.data.publication_venues %}
+      {% if venue contains candidate[1].match %}{% assign venue_data = candidate[1] %}{% break %}{% endif %}
+    {% endfor %}
     {% assign paper_url = details | split: '[**[Link]**](' | last | split: ')' | first %}
     <article class="publication-list__entry" aria-labelledby="publication-{{ group_number }}-{{ forloop.index0 }}">
       <h3 id="publication-{{ group_number }}-{{ forloop.index0 }}"><a href="{{ paper_url }}">{{ title | escape }}</a></h3>
       <p class="publication-list__authors">{{ authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
-      <p class="publication-list__venue">{{ venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+      <p class="publication-list__venue">{{ venue_display | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% include publication-metrics.html venue=venue_data %}</p>
       <p class="publication-list__links"><a href="{{ paper_url }}">[{{ labels.paper | escape }}]</a>{% if details contains '[**[Code]**](' %}{% assign code_url = details | split: '[**[Code]**](' | last | split: ')' | first %} <a href="{{ code_url }}">[{{ labels.code | escape }}]</a>{% endif %}</p>
     </article>
     {% endunless %}{% endfor %}
