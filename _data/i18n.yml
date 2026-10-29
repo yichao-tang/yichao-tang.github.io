@@ -1,0 +1,70 @@
+routes:
+  home:
+    en: /
+    zh: /zh/
+  publications:
+    en: /publications/
+    zh: /zh/publications/
+  about:
+    en: /about/
+    zh: /zh/about/
+
+en:
+  html_lang: en
+  og_locale: en_US
+  home_title: Homepage
+  navigation_label: Main navigation
+  toggle_navigation: Toggle navigation
+  language_navigation: Language
+  navigation:
+    home: Home
+    publications: Publications
+    about: About Me
+  position: Associate Professor
+  institution: South China Agricultural University
+  research_interests: Robust Watermarking; Reversible Data Hiding; Generative AI Security
+  location: Guangzhou, China
+  email: Email
+  website: Website
+  selected_publications: Selected Publications
+  publications: Publications
+  publication_topics: Publication topics
+  equal_contribution: Equal contribution
+  corresponding_author: Corresponding author
+  paper: Paper
+  code: Code
+  view_figure: View the figure at full size
+  topic_names:
+    - 🛡️ Generative AI Security & Watermarking
+    - 🔐 Robust & Reversible Watermarking
+    - 🧮 Evolutionary Computation
+
+zh:
+  html_lang: zh-CN
+  og_locale: zh_CN
+  home_title: 首页
+  navigation_label: 主导航
+  toggle_navigation: 展开导航
+  language_navigation: 语言
+  navigation:
+    home: 首页
+    publications: 学术论文
+    about: 关于我
+  position: 首聘副教授
+  institution: 华南农业大学
+  research_interests: 鲁棒水印；可逆信息隐藏；生成式人工智能安全
+  location: 中国，广州
+  email: 邮箱
+  website: 个人网站
+  selected_publications: 精选论文
+  publications: 学术论文
+  publication_topics: 论文研究方向
+  equal_contribution: 共同第一作者
+  corresponding_author: 通信作者
+  paper: 论文
+  code: 代码
+  view_figure: 查看完整配图
+  topic_names:
+    - 🛡️ 生成式人工智能安全
+    - 🔐 鲁棒可逆水印
+    - 🧮 演化计算

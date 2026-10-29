@@ -5,6 +5,7 @@
   venue: IEEE T-IFS
   year: 2026
   summary: "Widens watermark decoding regions to resist image changes while keeping embedding distortion low."
+  summary_zh: "拓宽解码区域，在控制图像失真的同时提高水印鲁棒性。"
   paper_url: https://ieeexplore.ieee.org/document/11753674
   code_url: https://github.com/yichao-tang/QS-QIM-RRW
   image: /images/papers/qs-qim-figure4.webp
@@ -12,6 +13,7 @@
   image_width: 1200
   image_height: 685
   image_alt: "QS-QIM Figure 4: enlarged decoding regions equalized into uniform strips, with codeword lines and decoding boundaries."
+  image_alt_zh: "解码区域扩展并均衡为规则条带的示意，包含码字线与解码边界。"
 
 - id: genptw
   short_name: GenPTW
@@ -19,7 +21,8 @@
   authors: "Zhenliang Gan, Chunya Liu, <strong>Yichao Tang</strong>, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang*."
   venue: AAAI
   year: 2026
-  summary: "Adds source tracing and edit localization to existing image generators with a single watermark."
+  summary: "Adds copyright protection and tamper localization to existing image generators with a single watermark."
+  summary_zh: "让现有图像生成模型通过同一水印实现版权保护与篡改定位。"
   paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/37412
   code_url: https://github.com/yichao-tang/GenPTW
   image: /images/papers/genptw-method.webp
@@ -27,6 +30,7 @@
   image_width: 1200
   image_height: 472
   image_alt: "GenPTW method with attention-based and spatial watermark fusion, followed by joint watermark extraction and edit localization."
+  image_alt_zh: "GenPTW 的注意力融合、空间融合，以及水印提取与编辑定位流程。"
 
 - id: dnlmark
   short_name: DNLMark
@@ -34,7 +38,8 @@
   authors: "<strong>Yichao Tang</strong>, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang*."
   venue: ICASSP
   year: 2026
-  summary: "Trains on common image distortions and simulated AI edits to improve watermark recovery."
+  summary: "Trains on common image distortions and simulated AIGC edits to improve watermark recovery."
+  summary_zh: "结合常见图像失真和模拟 AIGC 编辑进行训练，提高水印提取能力。"
   paper_url: https://ieeexplore.ieee.org/abstract/document/11464215
   code_url: https://github.com/yichao-tang/DNLMark
   image: /images/papers/dnlmark-overview.webp
@@ -42,6 +47,7 @@
   image_width: 1200
   image_height: 508
   image_alt: "DNLMark architecture with low-frequency watermark embedding, image noise for conventional distortions, latent noise for simulated semantic edits, and watermark extraction."
+  image_alt_zh: "DNLMark 的低频水印嵌入流程，使用图像噪声模拟常规失真、潜空间噪声模拟语义编辑，并提取水印。"
 
 - id: frpcet-rrw
   short_name: FrPCET-RRW
@@ -50,6 +56,7 @@
   venue: IEEE T-MM
   year: 2025
   summary: "Uses feature differences and improved quantization to embed watermarks with less image distortion."
+  summary_zh: "利用特征差值和改进的量化策略，以较小图像失真嵌入水印。"
   paper_url: https://ieeexplore.ieee.org/abstract/document/11207540/
   code_url: https://github.com/yichao-tang/FrPCET-RRW
   image: /images/papers/frpcet-quantization.webp
@@ -57,6 +64,7 @@
   image_width: 1200
   image_height: 1496
   image_alt: "Four optimized quantization cases showing how adjacent intervals reduce watermark embedding errors."
+  image_alt_zh: "四种优化量化情形，展示通过相邻量化区间减少水印嵌入误差。"
 
 - id: stdm-rrw
   short_name: STDM-RRW
@@ -65,6 +73,7 @@
   venue: IEEE T-IFS
   year: 2024
   summary: "Tests likely attacks to choose stable image features and adjust watermark strength."
+  summary_zh: "通过攻击模拟选择稳定的图像特征，并调整水印嵌入强度。"
   paper_url: https://ieeexplore.ieee.org/document/10458701
   code_url: https://github.com/yichao-tang/STDM-RRW
   image: /images/papers/stdm-multilevel-quantization.webp
@@ -72,3 +81,4 @@
   image_width: 1200
   image_height: 930
   image_alt: "The proposed multi-level STDM quantizer, showing four levels of embedding strength and their quantization intervals."
+  image_alt_zh: "多级 STDM 量化器的四级嵌入强度及对应量化区间。"

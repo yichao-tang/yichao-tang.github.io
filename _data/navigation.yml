@@ -1,7 +1,9 @@
 # main links links
 main:
   - title: "Publications"
+    key: publications
     url: "/publications/"
 
   - title: "About Me"
+    key: about
     url: "/about/"

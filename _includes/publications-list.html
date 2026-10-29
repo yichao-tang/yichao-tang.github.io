@@ -5,22 +5,28 @@ then the Paper and optional Code links. Keep the original include unchanged
 for the archived profile. _tools/check_publications.py verifies the rendered
 page against every original field and link.
 {% endcomment %}
+{% assign lang = page.lang | default: 'en' %}
+{% assign labels = site.data.i18n[lang] %}
 {% capture newline %}
 {% endcapture %}
 {% assign paper_separator = newline | append: '- ' %}
 {% assign groups = include.source | split: '### ' %}
 <div class="publication-list">
-  <h1 id="-publications">📝 Publications</h1>
-  <nav class="publication-list__topics" aria-label="Publication topics">
+  <h1 id="-publications">📝 {{ labels.publications | escape }}</h1>
+  <nav class="publication-list__topics" aria-label="{{ labels.publication_topics | escape }}">
     {% for group in groups %}{% unless forloop.first %}
     {% assign group_name = group | split: newline | first | strip %}
+    {% assign topic_index = forloop.index0 | minus: 1 %}
+    {% assign group_name = labels.topic_names[topic_index] | default: group_name %}
     <a href="#publication-group-{{ forloop.index0 }}">{{ group_name | escape }}</a>
     {% endunless %}{% endfor %}
   </nav>
-  <p class="publication-list__legend"># Equal contribution. * Corresponding author.</p>
+  <p class="publication-list__legend">{% if lang == 'zh' %}# {{ labels.equal_contribution | escape }}；* {{ labels.corresponding_author | escape }}。{% else %}# {{ labels.equal_contribution | escape }}. * {{ labels.corresponding_author | escape }}.{% endif %}</p>
   {% for group in groups %}{% unless forloop.first %}
   {% assign group_number = forloop.index0 %}
   {% assign group_name = group | split: newline | first | strip %}
+  {% assign topic_index = group_number | minus: 1 %}
+  {% assign group_name = labels.topic_names[topic_index] | default: group_name %}
   {% assign entries = group | split: paper_separator %}
   <section class="publication-list__group" aria-labelledby="publication-group-{{ group_number }}">
     <h2 id="publication-group-{{ group_number }}">{{ group_name | escape }}</h2>
@@ -35,7 +41,7 @@ page against every original field and link.
       <h3 id="publication-{{ group_number }}-{{ forloop.index0 }}"><a href="{{ paper_url }}">{{ title | escape }}</a></h3>
       <p class="publication-list__authors">{{ authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
       <p class="publication-list__venue">{{ venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
-      <p class="publication-list__links"><a href="{{ paper_url }}">[Paper]</a>{% if details contains '[**[Code]**](' %}{% assign code_url = details | split: '[**[Code]**](' | last | split: ')' | first %} <a href="{{ code_url }}">[Code]</a>{% endif %}</p>
+      <p class="publication-list__links"><a href="{{ paper_url }}">[{{ labels.paper | escape }}]</a>{% if details contains '[**[Code]**](' %}{% assign code_url = details | split: '[**[Code]**](' | last | split: ')' | first %} <a href="{{ code_url }}">[{{ labels.code | escape }}]</a>{% endif %}</p>
     </article>
     {% endunless %}{% endfor %}
   </section>

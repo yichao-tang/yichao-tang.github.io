@@ -1,42 +1,44 @@
 {% if page.author and site.data.authors[page.author] %}
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
+{% assign language = page.lang | default: 'en' %}
+{% assign labels = site.data.i18n[language] %}
 
 <div itemscope itemtype="http://schema.org/Person" class="profile_box">
 
   <div class="author__avatar">
-    <img src="{{ author.avatar | relative_url }}" class="author__photo" alt="{{ author.name }}" width="512" height="512">
+    <img src="{{ author.avatar | relative_url }}" class="author__photo" alt="{% if language == 'zh' %}{{ author.name_cn }}{% else %}{{ author.name }}{% endif %}" width="512" height="512">
   </div>
 
   <div class="author__content">
   <h3 class="author__name">
-    <span class="author__name-en">{{ author.name }}</span>
-    <span class="author__name-cn">{{ author.name_cn }}</span>
+    <span class="author__name-en">{% if language == 'zh' %}{{ author.name_cn }}{% else %}{{ author.name }}{% endif %}</span>
+    <span class="author__name-cn">{% if language == 'zh' %}{{ author.name }}{% else %}{{ author.name_cn }}{% endif %}</span>
   </h3>
   {% if site.description or site.institution %}
     <p class="author__position">
-      {% if site.description %}<span class="author__title">{{ site.description }}</span>{% endif %}
-      {% if site.institution %}<span class="author__institution">{{ site.institution }}</span>{% endif %}
+      {% if site.description %}<span class="author__title">{% if language == 'zh' %}{{ labels.position }}{% else %}{{ site.description }}{% endif %}</span>{% endif %}
+      {% if site.institution %}<span class="author__institution">{% if language == 'zh' %}{{ labels.institution }}{% else %}{{ site.institution }}{% endif %}</span>{% endif %}
     </p>
   {% endif %}
 </div>
 
-  {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+  {% if author.bio %}<p class="author__bio">{% if language == 'zh' %}{{ labels.research_interests }}{% else %}{{ author.bio }}{% endif %}</p>{% endif %}
 
   <div class="author__urls-wrapper">
     <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
     <ul class="author__urls social-icons">
       {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {% if language == 'zh' %}{{ labels.location }}{% else %}{{ author.location }}{% endif %}</li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
       {% endif %}
       {% if author.uri %}
-        <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ labels.website }}</a></li>
       {% endif %}
       {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ labels.email }}</a></li>
       {% endif %}
       {% if author.keybase %}
         <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
@@ -131,7 +133,7 @@
         <a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.email %}
-        <a href="mailto:{{ author.email }}" aria-label="Email"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
+        <a href="mailto:{{ author.email }}" aria-label="{{ labels.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.keybase %}
         <a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i></a>

@@ -38,7 +38,7 @@ That full restore intentionally removes changes introduced after the saved versi
 
 The refresh keeps these original source files byte-for-byte:
 
-- `_pages/includes/intro.md`
+- `_pages/includes/archive/intro-2026-10-29.md` (the original `_pages/includes/intro.md`)
 - `_pages/includes/pub_short.md`
 - `_pages/includes/archive/projects-2026-10-29.md` (the original `_pages/includes/projects.md`)
 - `_pages/includes/awards.md`
@@ -50,16 +50,18 @@ Ph.D. background, academic exchange, and email, followed by five selected
 publications. `/publications/` contains all 15 publications in a title-first
 layout, rendered from the unchanged `pub_short.md`. The build checks every title,
 author list, venue/year, and Paper/Code link against that source with
-`python3 _tools/check_publications.py _site`. `/about/` contains the full original biography,
-research projects, awards, and education. The current projects include contains
-six entries: the five original projects and the added General Program project
-62672118, placed immediately above project 62572125. Its dates and `Ongoing`
-status are retained as provided.
+`python3 _tools/check_publications.py _site`. `/about/` contains the complete
+biography, research projects, awards, and education. The biography records the
+Fudan school name on entry and its change during the postdoctoral appointment,
+as confirmed by the author. The current projects include contains seven entries:
+the five original projects, General Program project 62672118 immediately above
+62572125, and project 62066014 immediately after 62172165. Their dates and status
+are retained as provided.
 
 Compatibility routes remain directly accessible without occupying the main
 navigation: `/experience/` retains all projects, awards, and education;
 `/profile-2026-10-29/` retains the complete original combination, including the
-five-project snapshot from `includes/archive/projects-2026-10-29.md`. `/about.html`
+original biography and five-project snapshots in `includes/archive/`. `/about.html`
 continues to redirect to `/about/`.
 
 The five old root-page fragments are handled by a fixed compatibility mapping:
@@ -68,6 +70,33 @@ The five old root-page fragments are handled by a fixed compatibility mapping:
 `/about/`. Unknown fragments are left unchanged. These redirects do not add
 duplicate navigation links to the homepage body.
 
-All 15 publications, 6 current research projects, 4 awards, and 3 education entries
+All 15 publications, 7 current research projects, 4 awards, and 3 education entries
 remain. The frozen original profile continues to contain the original 5 projects.
 Existing HTML comments remain comments rather than being promoted to public text.
+
+## English and Chinese pages
+
+The right-hand language links switch between corresponding primary pages:
+
+| English | Chinese |
+| --- | --- |
+| `/` | `/zh/` |
+| `/publications/` | `/zh/publications/` |
+| `/about/` | `/zh/about/` |
+
+These are static pages with ordinary links; switching does not depend on browser
+language detection or a translation service. The original English profile is a
+frozen archive and does not declare a Chinese counterpart. Its language control
+leads to the current Chinese About page.
+
+Interface labels and the route mapping live in `_data/i18n.yml`. Chinese paper
+summaries and image descriptions are paired with the original fields in
+`_data/selected_publications.yml`. Both full publication lists render the same
+original bibliography: titles, authors, venues, years, and links remain in their
+published language. Chinese project titles and award names use the author's
+confirmed wording. Update the paired biography and project files together.
+
+Run `python3 _tools/check_localization.py _site` after building to check the six
+routes, metadata, language links, shared publication fields, separate email
+paragraphs, and profile record counts. For a build under a path prefix, add
+`--baseurl /preview`.

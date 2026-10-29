@@ -1,6 +1,6 @@
 I am currently an Associate Professor (First Appointment) at South China Agricultural University (SCAU). My research focuses on robust watermarking, reversible data hiding, and generative AI security.
 
-Before joining SCAU, I was a Postdoctoral Fellow at the Multimedia & Artificial Intelligence Security Laboratory (MAS), College of Computer Science and Artificial Intelligence, Fudan University, under the supervision of [Prof. Xinpeng Zhang](https://cs.fudan.edu.cn/3f/d2/c25909a278482/page.htm) and [Prof. Zhenxing Qian](https://tomzqian.github.io/).
+Before joining SCAU, I was a Postdoctoral Fellow at the Multimedia & Artificial Intelligence Security Laboratory (MAS), School of Computer Science, Fudan University, under the supervision of [Prof. Xinpeng Zhang](https://cs.fudan.edu.cn/c5/87/c30604a443783/page.htm) and [Prof. Zhenxing Qian](https://tomzqian.github.io/). During my appointment, the school became the College of Computer Science and Artificial Intelligence.
 
 I obtained my Ph.D. degree from SCAU under the supervision of [Prof. Chuntao Wang](https://www.scholat.com/wangchuntao), with additional guidance from [Prof. Kangshun Li](https://yjsglxt.scau.edu.cn/open/WxXlbs/TeacherInfo.aspx?jsbh=LiKangShun20). During my Ph.D. studies, I visited Hong Kong Baptist University for academic exchange and collaborated with [Prof. Yiu-ming Cheung](https://www.comp.hkbu.edu.hk/~ymc).
 

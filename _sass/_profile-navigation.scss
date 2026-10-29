@@ -1,5 +1,43 @@
+/* Keep language controls separate from the main navigation's width calculation. */
+.masthead__menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .greedy-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.language-switch {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+  font-size: 0.9em;
+
+  a,
+  span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 0.2em;
+  }
+
+  [aria-current="true"] {
+    color: $link-color;
+    font-weight: 700;
+  }
+
+  .language-switch__separator { color: $light-gray; }
+}
+
 /* A quieter three-page navigation and the existing author photograph. */
 .masthead .greedy-nav {
+  a { transition: color 0.2s ease-in-out; }
+
   .masthead__menu-item--lg { padding-right: 0.75em; }
 
   a[aria-current="page"] {
@@ -102,5 +140,15 @@
         min-height: 44px;
       }
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .masthead__menu { gap: 0.5rem; }
+
+  .masthead .greedy-nav a {
+    margin-left: 0.35rem;
+    margin-right: 0.35rem;
+    font-size: 0.93em;
   }
 }
