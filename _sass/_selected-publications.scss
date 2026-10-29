@@ -12,14 +12,29 @@
 
   .selected-publication__figure {
     flex: 0 0 210px;
-    display: block;
+    width: 210px;
     margin: 0;
+
+    figcaption {
+      margin-top: 0.45em;
+      color: $dark-gray;
+      font-size: 0.75em;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+
+  .selected-publication__figure-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 155px;
 
     img {
       display: block;
       width: 100%;
-      height: auto;
-      max-height: 165px;
+      height: 100%;
       object-fit: contain;
       box-shadow: none;
     }

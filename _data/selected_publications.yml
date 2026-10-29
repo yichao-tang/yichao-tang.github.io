@@ -4,9 +4,15 @@
   authors: "<strong>Yichao Tang</strong>, Zhuangxi Yao, Yingxi Huang, Chuntao Wang*, Shijun Xiang."
   venue: IEEE T-IFS
   year: 2026
-  summary: "Two-stage robust reversible watermarking using 2D lattice QIM and quantization strips."
+  summary: "Expands and equalizes decoding regions for more robust extraction, and reduces quantization distortion while retaining exact image recovery without attacks."
   paper_url: https://ieeexplore.ieee.org/document/11753674
   code_url: https://github.com/yichao-tang/QS-QIM-RRW
+  image: /images/papers/qs-qim-figure4.webp
+  image_full: /images/papers/qs-qim-figure4.png
+  image_width: 1200
+  image_height: 685
+  figure_label: "Fig. 4. Quantization strips"
+  image_alt: "QS-QIM Figure 4: enlarged decoding regions equalized into uniform strips, with codeword lines and decoding boundaries."
 
 - id: genptw
   short_name: GenPTW
@@ -14,12 +20,14 @@
   authors: "Zhenliang Gan, Chunya Liu, <strong>Yichao Tang</strong>, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang*."
   venue: AAAI
   year: 2026
-  summary: "Latent-space watermarking unifies provenance tracing and tamper localization."
+  summary: "Combines semantic and spatial watermark cues to trace image provenance and locate edits, with support for both in-generation and post-generation embedding."
   paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/37412
   code_url: https://github.com/yichao-tang/GenPTW
   image: /images/papers/genptw-overview.webp
+  image_full: /images/papers/genptw-overview.png
   image_width: 1200
-  image_height: 546
+  image_height: 562
+  figure_label: "Fig. 1. Embedding and extraction"
   image_alt: "GenPTW overview showing image generation, watermark embedding, editing, provenance tracing and tamper localization."
 
 - id: dnlmark
@@ -28,9 +36,15 @@
   authors: "<strong>Yichao Tang</strong>, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang*."
   venue: ICASSP
   year: 2026
-  summary: "Dual noise layers improve watermark robustness against image editing."
+  summary: "Trains against image-space distortions and latent-space editing simulations, using stable low-frequency VAE features to improve watermark recovery after conventional processing and semantic edits."
   paper_url: https://ieeexplore.ieee.org/abstract/document/11464215
   code_url: https://github.com/yichao-tang/DNLMark
+  image: /images/papers/dnlmark-overview.webp
+  image_full: /images/papers/dnlmark-overview.png
+  image_width: 1200
+  image_height: 508
+  figure_label: "Fig. 1. Dual-noise training"
+  image_alt: "DNLMark architecture with low-frequency watermark embedding, image noise for conventional distortions, latent noise for simulated semantic edits, and watermark extraction."
 
 - id: frpcet-rrw
   short_name: FrPCET-RRW
@@ -38,9 +52,15 @@
   authors: "<strong>Yichao Tang</strong>#, Shuai Wang#, Ruowei Han, Chuntao Wang*."
   venue: IEEE T-MM
   year: 2025
-  summary: "Fractional-order transform moments support robust and reversible watermark embedding."
+  summary: "Embeds bits in differences between paired moment magnitudes, reducing quantization error while preserving robust extraction and exact recovery from intact images."
   paper_url: https://ieeexplore.ieee.org/abstract/document/11207540/
   code_url: https://github.com/yichao-tang/FrPCET-RRW
+  image: /images/papers/frpcet-figure4.webp
+  image_full: /images/papers/frpcet-figure4.png
+  image_width: 1200
+  image_height: 864
+  figure_label: "Fig. 4. Extraction and recovery"
+  image_alt: "FrPCET Figure 4: watermark extraction from the received image, with original-image recovery only on the unattacked branch."
 
 - id: stdm-rrw
   short_name: STDM-RRW
@@ -48,10 +68,12 @@
   authors: "<strong>Yichao Tang</strong>, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung."
   venue: IEEE T-IFS
   year: 2024
-  summary: "Attack simulation adapts feature normalization and watermark embedding."
+  summary: "Uses simulated attacks to normalize stable PHT moments and tune multi-level embedding strength, improving robustness while preserving lossless recovery without attacks."
   paper_url: https://ieeexplore.ieee.org/document/10458701
   code_url: https://github.com/yichao-tang/STDM-RRW
-  image: /images/papers/stdm-rrw-extraction.png
-  image_width: 630
-  image_height: 620
+  image: /images/papers/stdm-rrw-extraction.webp
+  image_full: /images/papers/stdm-rrw-extraction.png
+  image_width: 1200
+  image_height: 1205
+  figure_label: "Fig. 3. Extraction and recovery"
   image_alt: "STDM-RRW Figure 3: extraction of the watermark after attack, and recovery of the original image when unattacked."
