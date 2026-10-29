@@ -8,16 +8,6 @@
   paper_url: https://ieeexplore.ieee.org/document/11753674
   code_url: https://github.com/yichao-tang/QS-QIM-RRW
 
-- id: dnlmark
-  short_name: DNLMark
-  title: "DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing"
-  authors: "<strong>Yichao Tang</strong>, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang*."
-  venue: ICASSP
-  year: 2026
-  summary: "Dual noise layers improve watermark robustness against image editing."
-  paper_url: https://ieeexplore.ieee.org/abstract/document/11464215
-  code_url: https://github.com/yichao-tang/DNLMark
-
 - id: genptw
   short_name: GenPTW
   title: "GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization"
@@ -31,6 +21,16 @@
   image_width: 1200
   image_height: 546
   image_alt: "GenPTW overview showing image generation, watermark embedding, editing, provenance tracing and tamper localization."
+
+- id: dnlmark
+  short_name: DNLMark
+  title: "DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing"
+  authors: "<strong>Yichao Tang</strong>, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang*."
+  venue: ICASSP
+  year: 2026
+  summary: "Dual noise layers improve watermark robustness against image editing."
+  paper_url: https://ieeexplore.ieee.org/abstract/document/11464215
+  code_url: https://github.com/yichao-tang/DNLMark
 
 - id: frpcet-rrw
   short_name: FrPCET-RRW
