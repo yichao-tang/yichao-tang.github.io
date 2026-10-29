@@ -1,0 +1,90 @@
+/* A quieter three-page navigation and the existing author photograph. */
+.masthead .greedy-nav {
+  .masthead__menu-item--lg { padding-right: 0.75em; }
+
+  a[aria-current="page"] {
+    color: $link-color;
+
+    &:before {
+      height: 2px;
+      background: $link-color;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.author__avatar img {
+  max-width: 160px;
+  height: auto;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.profile_box .author__position {
+  margin: 0.5em 0 0.8em;
+  font-size: 0.875em;
+  line-height: 1.5;
+}
+
+.sidebar .author__bio {
+  margin: 0 0 1em;
+  font-size: 0.875em;
+  line-height: 1.5;
+}
+
+@media (max-width: 924px) {
+  .masthead .greedy-nav {
+    .masthead__menu-item--lg { padding-right: 0; }
+    a { margin-left: 0.6rem; margin-right: 0.6rem; }
+  }
+
+  .profile_box {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 0.65em 1em;
+    align-items: start;
+
+    .author__avatar {
+      display: block;
+      width: 88px;
+      img { width: 88px; min-width: 0; }
+    }
+
+    .author__content {
+      display: block;
+      min-width: 0;
+      padding: 0;
+    }
+
+    .author__position { margin-bottom: 0; }
+
+    .author__bio,
+    .author__urls-wrapper { grid-column: 1 / -1; }
+
+    .author__bio { margin: 0; }
+
+    .author__urls-wrapper {
+      display: block;
+      width: 100%;
+      margin: 0;
+      cursor: auto;
+    }
+
+    .author__urls_sm {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.15em;
+      padding: 0;
+      font-size: 1.35em;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 40px;
+      }
+    }
+  }
+}

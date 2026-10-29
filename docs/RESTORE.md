@@ -44,8 +44,22 @@ The refresh keeps these original source files byte-for-byte:
 - `_pages/includes/awards.md`
 - `_pages/includes/others.md`
 
-They remain visible on `/about/`, `/publications/`, and `/experience/`. The complete
-original combination is also available at `/profile-2026-10-29/`.
+The main navigation contains Homepage, Publications, and About Me. The homepage
+shows a short introduction and five selected publications. `/publications/`
+contains all 15 publications. `/about/` contains the full original biography,
+research projects, awards, and education, by including the unchanged source files
+above.
+
+Compatibility routes remain directly accessible without occupying the main
+navigation: `/experience/` retains the original projects, awards, and education;
+`/profile-2026-10-29/` retains the complete original combination. `/about.html`
+continues to redirect to `/about/`.
+
+The five old root-page fragments are handled by a fixed compatibility mapping:
+`/#about-me` opens `/about/`; `/#-publications` opens `/publications/`; and
+`/#-projects`, `/#-awards`, and `/#-education` open the matching heading on
+`/about/`. Unknown fragments are left unchanged. These redirects do not add
+duplicate navigation links to the homepage body.
 
 All 15 publications, 5 research projects, 4 awards, and 3 education entries remain.
 Existing HTML comments remain comments rather than being promoted to public text.
