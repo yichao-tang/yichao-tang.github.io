@@ -1,0 +1,21 @@
+<h1>Selected Publications</h1>
+<p><a href="{{ '/publications/' | relative_url }}">View all publications</a></p>
+<div class="selected-publications">
+  {% for paper in site.data.selected_publications %}
+  <article class="selected-publication" aria-labelledby="paper-{{ paper.id }}">
+    {% if paper.image %}
+    <a class="selected-publication__figure image-popup" href="{{ paper.image | relative_url }}" aria-label="View the {{ paper.short_name }} figure at full size">
+      <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt | escape }}" loading="lazy" width="{{ paper.image_width }}" height="{{ paper.image_height }}">
+    </a>
+    {% endif %}
+    <div class="selected-publication__text">
+      <h2 class="selected-publication__title" id="paper-{{ paper.id }}"><a href="{{ paper.paper_url }}">{{ paper.title | escape }}</a></h2>
+      <p class="selected-publication__authors">{{ paper.authors }}</p>
+      <p class="selected-publication__venue"><strong>{{ paper.venue | escape }}, {{ paper.year }}</strong></p>
+      <p class="selected-publication__summary">{{ paper.summary | escape }}</p>
+      <p class="selected-publication__links"><a href="{{ paper.paper_url }}">[Paper]</a> <a href="{{ paper.code_url }}">[Code]</a></p>
+    </div>
+  </article>
+  {% endfor %}
+  <p class="selected-publications__note"># Equal contribution. * Corresponding author.</p>
+</div>

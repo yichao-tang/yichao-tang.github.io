@@ -9,7 +9,9 @@
 title                    : "Yichao Tang (汤毅超)"
 description              : "Associate Professor"
 institution              : "South China Agricultural University"
-repository               : "yichao-tang/yichaotang.github.io"
+repository               : "yichao-tang/yichao-tang.github.io"
+url                      : "https://yichao-tang.github.io"
+baseurl                  : ""
 google_scholar_stats_use_cdn : true
 
 # google analytics

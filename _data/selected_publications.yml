@@ -1,0 +1,57 @@
+- id: qs-qim-rrw
+  short_name: QS-QIM-RRW
+  title: "A Two-Stage Robust Reversible Image Watermarking Scheme Using 2D Lattice QIM With Quantization Strips"
+  authors: "<strong>Yichao Tang</strong>, Zhuangxi Yao, Yingxi Huang, Chuntao Wang*, Shijun Xiang."
+  venue: IEEE T-IFS
+  year: 2026
+  summary: "Two-stage robust reversible watermarking using 2D lattice QIM and quantization strips."
+  paper_url: https://ieeexplore.ieee.org/document/11753674
+  code_url: https://github.com/yichao-tang/QS-QIM-RRW
+
+- id: dnlmark
+  short_name: DNLMark
+  title: "DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing"
+  authors: "<strong>Yichao Tang</strong>, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang*."
+  venue: ICASSP
+  year: 2026
+  summary: "Dual noise layers improve watermark robustness against image editing."
+  paper_url: https://ieeexplore.ieee.org/abstract/document/11464215
+  code_url: https://github.com/yichao-tang/DNLMark
+
+- id: genptw
+  short_name: GenPTW
+  title: "GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization"
+  authors: "Zhenliang Gan, Chunya Liu, <strong>Yichao Tang</strong>, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang*."
+  venue: AAAI
+  year: 2026
+  summary: "Latent-space watermarking unifies provenance tracing and tamper localization."
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/37412
+  code_url: https://github.com/yichao-tang/GenPTW
+  image: /images/papers/genptw-overview.webp
+  image_width: 1200
+  image_height: 546
+  image_alt: "GenPTW overview showing image generation, watermark embedding, editing, provenance tracing and tamper localization."
+
+- id: frpcet-rrw
+  short_name: FrPCET-RRW
+  title: "A Novel Robust Reversible Watermarking Scheme Using Fractional-Order Polar Complex Exponential Transform"
+  authors: "<strong>Yichao Tang</strong>#, Shuai Wang#, Ruowei Han, Chuntao Wang*."
+  venue: IEEE T-MM
+  year: 2025
+  summary: "Fractional-order transform moments support robust and reversible watermark embedding."
+  paper_url: https://ieeexplore.ieee.org/abstract/document/11207540/
+  code_url: https://github.com/yichao-tang/FrPCET-RRW
+
+- id: stdm-rrw
+  short_name: STDM-RRW
+  title: "A Robust Reversible Watermarking Scheme Using Attack-Simulation-Based Adaptive Normalization and Embedding"
+  authors: "<strong>Yichao Tang</strong>, Chuntao Wang*, Shijun Xiang, Yiu-Ming Cheung."
+  venue: IEEE T-IFS
+  year: 2024
+  summary: "Attack simulation adapts feature normalization and watermark embedding."
+  paper_url: https://ieeexplore.ieee.org/document/10458701
+  code_url: https://github.com/yichao-tang/STDM-RRW
+  image: /images/papers/stdm-rrw-extraction.png
+  image_width: 630
+  image_height: 620
+  image_alt: "STDM-RRW Figure 3: extraction of the watermark after attack, and recovery of the original image when unattacked."
