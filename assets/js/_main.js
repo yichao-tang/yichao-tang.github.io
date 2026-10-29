@@ -63,36 +63,28 @@ $(document).ready(function(){
   // add lightbox class to all image links
   $("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']").addClass("image-popup");
 
-  // Magnific-Popup options
+  // Each paper figure opens on its own and closes when clicked again.
   $(".image-popup").magnificPopup({
-    // disableOn: function() {
-    //   if( $(window).width() < 500 ) {
-    //     return false;
-    //   }
-    //   return true;
-    // },
     type: 'image',
-    tLoading: 'Loading image #%curr%...',
+    tLoading: document.documentElement.lang === 'zh-CN' ? '正在载入图片…' : 'Loading image…',
     gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+      enabled: false,
+      navigateByImgClick: false,
+      arrows: false
     },
     image: {
-      tError: '<a href="%url%">Image #%curr%</a> could not be loaded.',
+      verticalFit: true,
+      tError: document.documentElement.lang === 'zh-CN' ? '<a href="%url%">图片</a>无法载入。' : '<a href="%url%">The image</a> could not be loaded.'
     },
-    removalDelay: 500, // Delay in milliseconds before popup is removed
-    // Class that is added to body when popup is open.
-    // make it unique to apply your CSS animations just to this exact popup
-    mainClass: 'mfp-zoom-in',
-    callbacks: {
-      beforeOpen: function() {
-        // just a hack that adds mfp-anim class to markup
-        this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-      }
+    zoom: {
+      enabled: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      duration: 200,
+      easing: 'ease-in-out'
     },
+    removalDelay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 200,
     closeOnContentClick: true,
-    midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+    closeOnBgClick: true,
+    midClick: false
   });
 
 });
