@@ -1,5 +1,37 @@
 # Website restore points
 
+## Before the chronological-publications release of October 30, 2026
+
+The author approved chronological ordering and direct publication on October 30,
+2026, retaining the existing JIF percentiles. The previous live bilingual site
+is preserved exactly at:
+
+- Commit: `d947d8d23323640da7567afe58f17df4a4441cd2`
+- Backup branch: [`backup/pre-chronological-order-2026-10-30`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-chronological-order-2026-10-30)
+- [Download that source ZIP](https://github.com/yichao-tang/yichao-tang.github.io/archive/d947d8d23323640da7567afe58f17df4a4441cd2.zip)
+
+Leave this backup branch unchanged. Local copies outside the working checkout
+are `homepage-before-chronological-order-2026-10-30.zip` and the verified,
+complete-history `homepage-before-chronological-order-2026-10-30.bundle`.
+All earlier backup branches and archives below remain available.
+
+For an immediate undo, use **Revert** on the merged chronological-publications
+pull request, then merge the resulting restore pull request. For an exact
+restore after subsequent changes, use a clean checkout and a new branch:
+
+```powershell
+git fetch origin
+git switch -c restore/pre-chronological-order-2026-10-30 origin/main
+git restore --source=d947d8d23323640da7567afe58f17df4a4441cd2 --staged --worktree -- .
+git diff --cached --stat
+git commit -m "Restore bilingual homepage before chronological publication ordering"
+git push -u origin restore/pre-chronological-order-2026-10-30
+```
+
+Open and merge a pull request to `main`, then wait for GitHub Pages deployment.
+This preserves Git history and requires no force push. An exact restore also
+removes later source changes.
+
 ## Before the two-paper and PI-project update of October 30, 2026
 
 The author approved this bilingual content update for publication on
@@ -115,6 +147,8 @@ directly introduces the current appointment, research interests, postdoctoral an
 Ph.D. background, academic exchange, and email, followed by five selected
 publications. `/publications/` contains all 17 publications in a title-first
 layout, rendered from `pub_short.md`; the original 15 citations remain intact.
+Display order and year navigation follow the audited
+`_data/publication_chronology.json`; see [date rules](PUBLICATION-CHRONOLOGY.md).
 The two Chinese papers display publisher-supplied Chinese titles, authors and
 full journal names on `/zh/publications/`. The build checks every title,
 author list, venue/year, and Paper/Code link against that source with

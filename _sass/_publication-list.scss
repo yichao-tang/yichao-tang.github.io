@@ -1,4 +1,4 @@
-/* Title-first bibliography, rendered from the unchanged original Markdown. */
+/* Chronological bibliography, retaining the original citation text. */
 .publication-list {
   .publication-list__topics {
     display: flex;
@@ -6,6 +6,11 @@
     gap: 0.35em 1.2em;
     margin-bottom: 0.55em;
     font-size: 0.9em;
+  }
+
+  .publication-list__order-note {
+    margin: 0 0 0.5em;
+    font-size: 0.875em;
   }
 
   .publication-list__legend {

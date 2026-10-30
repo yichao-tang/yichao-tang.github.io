@@ -29,6 +29,9 @@ en:
   selected_publications: Selected Publications
   publications: Publications
   publication_topics: Publication topics
+  publication_years: Publication years
+  publication_order_note: "Ordered by first publication or online availability; citation years follow the journal or conference record."
+  and_earlier: "& earlier"
   equal_contribution: Equal contribution
   corresponding_author: Corresponding author
   paper: Paper
@@ -59,6 +62,9 @@ zh:
   selected_publications: 精选论文
   publications: 学术论文
   publication_topics: 论文研究方向
+  publication_years: 发表年份
+  publication_order_note: "按首次发表或平台上线时间倒序排列；引用年份保留期刊或会议记录。"
+  and_earlier: 及以前
   equal_contribution: 共同第一作者
   corresponding_author: 通信作者
   paper: 论文

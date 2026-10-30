@@ -8,7 +8,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 
-from check_publications import PublicationParser, ROOT, source_entries
+from check_publications import (HOME_ORDER, YEAR_GROUPS, PublicationParser, ROOT,
+                                chronologically_ordered_entries, publication_chronology, source_entries)
 
 
 def require(condition, message):
@@ -31,6 +32,7 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.lang, self.canonical, self.alternates = "", [], []
         self.nav, self.nav_current, self.switch = [], [], []
+        self.year_links, self.year_headings = [], []
         self.nav_scope = None
         self.content_depth = 0
         self.paragraph, self.paragraphs = None, []
@@ -59,6 +61,9 @@ class Page(HTMLParser):
                 self.content_depth += 1
         if tag == "a":
             href = attrs.get("href", "")
+            fragment = href.rsplit("#", 1)[-1] if "#" in href else ""
+            if fragment.startswith("publication-year-"):
+                self.year_links.append(fragment)
             if self.nav_scope == "main":
                 self.nav.append(href)
                 if attrs.get("aria-current") == "page":
@@ -77,6 +82,8 @@ class Page(HTMLParser):
             elif tag == "p":
                 self.paragraph = {"text": "", "links": [],
                                   "inside_paper": self.paper is not None}
+        if tag == "h2" and attrs.get("id", "").startswith("publication-year-"):
+            self.year_headings.append(attrs["id"])
         if tag == "article" and "selected-publication" in classes:
             self.paper = {key: "" for key in
                           ("title", "title_url", "authors", "venue", "summary", "image", "image_full", "alt")}
@@ -182,11 +189,25 @@ def main():
     for index in (0, 1):
         publications = PublicationParser()
         publications.feed(pages["publications", index].html)
-        require(publications.entries == source_entries(("en", "zh")[index]),
+        require(publications.entries == chronologically_ordered_entries(("en", "zh")[index]),
                 f"{routes['publications'][index]}: bibliography fields, translations or order changed.")
+        year_targets = ["publication-year-" + year for year in YEAR_GROUPS]
+        require(pages["publications", index].year_links == year_targets and
+                pages["publications", index].year_headings == year_targets,
+                f"{routes['publications'][index]}: year links and headings are missing or out of order.")
 
     homes = [pages["home", index] for index in (0, 1)]
     require(all(len(page.papers) == 5 for page in homes), "Both Home pages must contain five selected papers.")
+    chronology = {row["id"]: row for row in publication_chronology()}
+    home_urls = [chronology[paper_id]["paper_url"] for paper_id in HOME_ORDER]
+    for index, page in enumerate(homes):
+        require([paper["title_url"] for paper in page.papers] == home_urls,
+                f"{routes['home'][index]}: selected papers differ from the approved Home order.")
+    for index in (0, 1):
+        for name in ("home", "publications"):
+            rendered = pages[name, index].html
+            require("JIF percentile:" in rendered and "JCI percentile:" not in rendered,
+                    f"{routes[name][index]}: the approved JIF percentile labels were replaced or removed.")
     for before, after in zip(homes[0].papers, homes[1].papers):
         for key in ("title", "title_url", "authors", "venue", "links", "image", "image_full"):
             require(before[key] == after[key], f"Selected paper differs between languages: {key}, {before['title']}")
@@ -246,8 +267,8 @@ def main():
             "2026091086" not in archive.html,
             "The original profile must retain its 15-paper, five-project snapshot.")
     print("PASS: 6 bilingual routes, navigation/switches/canonical/hreflang; "
-          "17+17 publications including localized Chinese papers; 15 original citations preserved; "
-          "5 matching selected papers; 2 separate contact paragraphs; "
+          "17+17 chronological publications with matching year navigation; 15 original citations preserved; "
+          "5 selected papers in approved order; JIF percentile labels retained; 2 separate contact paragraphs; "
           "2 PI projects, 4 awards and 3 degrees per About; unchanged English archive content.")
 
 
