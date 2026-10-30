@@ -1,5 +1,19 @@
 # Venue-level labels are shared by Home and Publications in both languages.
 # Sources, release dates and the category-selection rule: docs/PUBLICATION-METRICS.md.
+jig:
+  match: Journal of Image and Graphics
+  name: Journal of Image and Graphics
+  short_name: Journal of Image and Graphics
+  ccf: T2
+  ccf_year: 2025
+  ccf_catalogue: Chinese journal catalogue (T1/T2/T3)
+joca:
+  match: Journal of Computer Applications
+  name: Journal of Computer Applications
+  short_name: Journal of Computer Applications
+  ccf: T2
+  ccf_year: 2025
+  ccf_catalogue: Chinese journal catalogue (T1/T2/T3)
 aaai:
   match: Proceedings of the AAAI Conference
   name: Proceedings of the AAAI Conference on Artificial Intelligence

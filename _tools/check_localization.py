@@ -174,12 +174,16 @@ def main():
                     f"{route}: incorrect or duplicate hreflang counterparts.")
 
     expected = source_entries()
-    require(len(expected) == 15, "The original bibliography must still contain 15 publications.")
+    require(len(expected) == 17, "The current bibliography must contain 17 publications.")
+    original_bibliography = source_entries(filename="_pages/includes/archive/pub-short-2026-10-29.md")
+    require(len(original_bibliography) == 15 and
+            [entry for entry in expected if entry in original_bibliography] == original_bibliography,
+            "The original 15 publications must remain intact and in relative order.")
     for index in (0, 1):
         publications = PublicationParser()
         publications.feed(pages["publications", index].html)
-        require(publications.entries == expected,
-                f"{routes['publications'][index]}: original bibliography fields or order changed.")
+        require(publications.entries == source_entries(("en", "zh")[index]),
+                f"{routes['publications'][index]}: bibliography fields, translations or order changed.")
 
     homes = [pages["home", index] for index in (0, 1)]
     require(all(len(page.papers) == 5 for page in homes), "Both Home pages must contain five selected papers.")
@@ -201,17 +205,21 @@ def main():
     abouts = [pages["about", index] for index in (0, 1)]
     project_ids = [re.search(r"Grant No\.\s+([A-Za-z0-9]+)", line).group(1)
                    for line in source_lines("projects.md")]
-    require(len(project_ids) == 7, "The current project source must contain seven project IDs.")
+    require(project_ids == ["62502093", "2024075"],
+            "The current project source must contain only the two PI projects.")
     award_urls = [re.findall(r"\[[^\]]+\]\(([^)]+)\)", line)
                   for line in source_lines("awards.md")]
     education = source_lines("others.md")
     require(len(award_urls) == 4 and len(education) == 3, "Original award or education count changed.")
     for index, page in enumerate(abouts):
         projects = page.sections["-projects"]
-        require(len(projects) == 7 and
+        require(len(projects) == 2 and
                 all([code for code in project_ids if code in item["text"]] == [expected_id]
                     for item, expected_id in zip(projects, project_ids)),
-                f"{routes['about'][index]}: seven project IDs are missing or out of order.")
+                f"{routes['about'][index]}: the two PI projects are missing or out of order.")
+        pi_label = ("Principal Investigator", "主持")[index]
+        require(all(pi_label in item["text"] for item in projects),
+                f"{routes['about'][index]}: a current project is not marked as PI.")
         awards = page.sections["-awards"]
         require(len(awards) == 4 and [item["links"] for item in awards] == award_urls,
                 f"{routes['about'][index]}: one of four awards or its evidence link is missing.")
@@ -232,9 +240,15 @@ def main():
     require(archive.lang == "en", "The original profile must remain English.")
     require(not any(lang.startswith("zh") for lang, _ in archive.alternates),
             "The original profile declares a nonexistent Chinese alternate.")
+    require(len(archive.sections["-projects"]) == 5 and
+            all(entry["paper"] in archive.html for entry in original_bibliography) and
+            "10.11834/jig.260043" not in archive.html and
+            "2026091086" not in archive.html,
+            "The original profile must retain its 15-paper, five-project snapshot.")
     print("PASS: 6 bilingual routes, navigation/switches/canonical/hreflang; "
-          "15+15 original publications; 5 matching selected papers; "
-          "2 separate contact paragraphs; 7 projects, 4 awards and 3 degrees per About; English archive.")
+          "17+17 publications including localized Chinese papers; 15 original citations preserved; "
+          "5 matching selected papers; 2 separate contact paragraphs; "
+          "2 PI projects, 4 awards and 3 degrees per About; unchanged English archive content.")
 
 
 if __name__ == "__main__":

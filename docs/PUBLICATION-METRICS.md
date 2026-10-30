@@ -12,7 +12,7 @@ Both languages and both publication views use the same venue records in
 `IEEE T-MM, 2025 · CCF A · JCR Q1 · JIF percentile: 98.0`
 
 The publication year is the paper's year. Metric editions are independent of
-that year: CCF uses the 2026 seventh edition; JCR uses the 2026 release of 2025
+that year: international CCF ratings use the 2026 seventh edition; JCR uses the 2026 release of 2025
 data. These are current venue labels, not historical publication-year ratings.
 CCF labels are omitted for unlisted venues. JCR/JIF labels apply to journals.
 Missing labels are omitted without a dash or placeholder.
@@ -39,6 +39,16 @@ and its downloadable seventh-edition directory were checked.
 - C: IEEE CEC.
 - Unlisted: CRESS, Computing, IEEE Access, Journal of Computational Science,
   IJCSM, IJCINI, IEEE SSCI. Computing is not Discover Computing.
+
+### Chinese journals added in the October 30 content release
+
+Journal of Image and Graphics / 中国图象图形学报 and Journal of Computer
+Applications / 计算机应用 use `CCF T2`, from the separate 2025 Chinese-journal
+catalogue. The tooltip names that catalogue and year. T2 is not an international
+B rating. No JCR labels are inferred. See the
+[content-update record](CONTENT-UPDATE-2026-10-30.md) for publisher metadata and
+official CCF sources. The original bibliography snapshot is now frozen in
+`_pages/includes/archive/pub-short-2026-10-29.md`.
 
 ## JCR sources and calculation
 

@@ -1,6 +1,8 @@
 # 📝 Publications
 
 ### 🛡️ Generative AI Security & Watermarking
+- Ruotong Si, **Yichao Tang**, Xinpeng Zhang, Sheng Li, Zhenxing Qian\*. "An Image Watermarking Method for Camera Imaging Style Protection." Journal of Image and Graphics, 2026. [**[Link]**](https://www.cjig.cn/zh/article/doi/10.11834/jig.260043/)
+
 - **Yichao Tang**, Mingyang Li, Xinting Wu, Sheng Li, Zhenxing Qian, Xinpeng Zhang\*. "DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing." IEEE International Conference on Acoustics, Speech and Signal Processing **(ICASSP)**, 2026. [**[Link]**](https://ieeexplore.ieee.org/abstract/document/11464215) [**[Code]**](https://github.com/yichao-tang/DNLMark)
 
 - Zhenliang Gan, Chunya Liu, **Yichao Tang**, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang\*. "GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization." Proceedings of the AAAI Conference on Artificial Intelligence **(AAAI)**, 2026. [**[Link]**](https://ojs.aaai.org/index.php/AAAI/article/view/37412) [**[Code]**](https://github.com/yichao-tang/GenPTW)
@@ -9,6 +11,8 @@
 
 
 ### 🔐 Robust & Reversible Watermarking
+
+- Yingxi Huang, Chuntao Wang\*, Jiancai Wang, **Yichao Tang**, Shan Bian. "Robust reversible watermarking for JPEG images based on global-local statistical features and attack-driven carrier selection." Journal of Computer Applications, 2026. [**[Link]**](https://www.joca.cn/EN/10.11772/j.issn.1001-9081.2026091086)
 
 - **Yichao Tang**, Zhuangxi Yao, Yingxi Huang, Chuntao Wang\*, Shijun Xiang. "A Two-Stage Robust Reversible Image Watermarking Scheme Using 2D Lattice QIM With Quantization Strips." IEEE Transactions on Information Forensics and Security **(T-IFS)**, 2026. [**[Link]**](https://ieeexplore.ieee.org/document/11753674) [**[Code]**](https://github.com/yichao-tang/QS-QIM-RRW)
 

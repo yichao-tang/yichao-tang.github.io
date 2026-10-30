@@ -5,6 +5,7 @@ No third-party Python packages are required.
 """
 
 import html
+import json
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -21,8 +22,9 @@ def plain_markdown(value):
     return " ".join(html.unescape(value).split())
 
 
-def source_entries():
-    source = (ROOT / "_pages/includes/pub_short.md").read_text(encoding="utf-8")
+def source_entries(language="en", filename="_pages/includes/pub_short.md"):
+    source = (ROOT / filename).read_text(encoding="utf-8")
+    translations = json.loads((ROOT / "_data/publication_translations.json").read_text(encoding="utf-8"))
     result = []
     for line in source.splitlines():
         if not line.startswith("- "):
@@ -47,6 +49,10 @@ def source_entries():
             "paper": paper.group(1),
             "code": code.group(1) if code else None,
         })
+        translation = translations.get(paper.group(1), {}).get(language)
+        if translation:
+            for field in ("title", "authors", "venue"):
+                result[-1][field] = plain_markdown(translation[field])
     return result
 
 
@@ -121,7 +127,7 @@ def main():
         raise SystemExit("The CRESS escaped ampersand is still visible.")
     code_count = sum(entry["code"] is not None for entry in expected)
     print(
-        f"PASS: {len(expected)} publications match all original titles, authors, "
+        f"PASS: {len(expected)} publications match source titles, authors, "
         f"venues/years and Paper links; {code_count} Code links preserved."
     )
 

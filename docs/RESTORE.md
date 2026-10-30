@@ -1,5 +1,39 @@
 # Website restore points
 
+## Before the two-paper and PI-project update of October 30, 2026
+
+The author approved this bilingual content update for publication on
+October 30, 2026. It adds two papers and limits the current project lists to
+the two Principal Investigator projects. The live version immediately before
+this update is preserved exactly at:
+
+- Commit: `972fc301363441c9be20aafd500c82f0057e7e82`
+- Backup branch: [`backup/pre-two-papers-2026-10-30`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-two-papers-2026-10-30)
+- [Download that source ZIP](https://github.com/yichao-tang/yichao-tang.github.io/archive/972fc301363441c9be20aafd500c82f0057e7e82.zip)
+
+Leave this backup branch unchanged. A source ZIP and a verified, complete-history
+Git bundle are also saved outside the working checkout as
+`homepage-before-two-papers-2026-10-30.zip` and
+`homepage-before-two-papers-2026-10-30.bundle`. Earlier backup branches and
+archives below remain unchanged.
+
+For an immediate undo, use **Revert** on the merged two-paper/PI-project pull
+request, then merge the resulting restore pull request. To restore the exact
+snapshot after subsequent changes, use a clean checkout and a new branch:
+
+```powershell
+git fetch origin
+git switch -c restore/pre-two-papers-2026-10-30 origin/main
+git restore --source=972fc301363441c9be20aafd500c82f0057e7e82 --staged --worktree -- .
+git diff --cached --stat
+git commit -m "Restore bilingual homepage before the two-paper and PI-project update"
+git push -u origin restore/pre-two-papers-2026-10-30
+```
+
+Open and merge a pull request to `main`, then wait for GitHub Pages deployment.
+This preserves Git history and requires no force push. Restoring this exact
+snapshot also removes later source changes.
+
 ## Before the publication metrics and figure-zoom release
 
 The previous live bilingual website is preserved exactly at:
@@ -71,7 +105,7 @@ That full restore intentionally removes changes introduced after the saved versi
 The refresh keeps these original source files byte-for-byte:
 
 - `_pages/includes/archive/intro-2026-10-29.md` (the original `_pages/includes/intro.md`)
-- `_pages/includes/pub_short.md`
+- `_pages/includes/archive/pub-short-2026-10-29.md` (the original `_pages/includes/pub_short.md`)
 - `_pages/includes/archive/projects-2026-10-29.md` (the original `_pages/includes/projects.md`)
 - `_pages/includes/awards.md`
 - `_pages/includes/others.md`
@@ -79,19 +113,21 @@ The refresh keeps these original source files byte-for-byte:
 The main navigation contains Homepage, Publications, and About Me. The homepage
 directly introduces the current appointment, research interests, postdoctoral and
 Ph.D. background, academic exchange, and email, followed by five selected
-publications. `/publications/` contains all 15 publications in a title-first
-layout, rendered from the unchanged `pub_short.md`. The build checks every title,
+publications. `/publications/` contains all 17 publications in a title-first
+layout, rendered from `pub_short.md`; the original 15 citations remain intact.
+The two Chinese papers display publisher-supplied Chinese titles, authors and
+full journal names on `/zh/publications/`. The build checks every title,
 author list, venue/year, and Paper/Code link against that source with
 `python3 _tools/check_publications.py _site`. `/about/` contains the complete
 biography, research projects, awards, and education. The biography uses a single
 Fudan college name in each language, as confirmed by the author. The current
-projects include contains seven entries:
-the five original projects, General Program project 62672118 immediately above
-62572125, and project 62066014 immediately after 62172165. Their dates and status
-are retained as provided.
+projects include contains only the author's two Principal Investigator projects,
+62502093 and 2024075, as requested on October 30, 2026. Their dates and status are
+retained as provided. Earlier participating projects remain recoverable from Git
+history and the saved backups.
 
 Compatibility routes remain directly accessible without occupying the main
-navigation: `/experience/` retains all projects, awards, and education;
+navigation: `/experience/` uses the current projects, awards, and education;
 `/profile-2026-10-29/` retains the complete original combination, including the
 original biography and five-project snapshots in `includes/archive/`. `/about.html`
 continues to redirect to `/about/`.
@@ -102,8 +138,9 @@ The five old root-page fragments are handled by a fixed compatibility mapping:
 `/about/`. Unknown fragments are left unchanged. These redirects do not add
 duplicate navigation links to the homepage body.
 
-All 15 publications, 7 current research projects, 4 awards, and 3 education entries
-remain. The frozen original profile continues to contain the original 5 projects.
+There are 17 current publications, 2 current research projects, 4 awards, and 3
+education entries. The frozen original profile retains the original 15 papers
+and 5 projects.
 Existing HTML comments remain comments rather than being promoted to public text.
 
 ## English and Chinese pages
@@ -124,8 +161,10 @@ leads to the current Chinese About page.
 Interface labels and the route mapping live in `_data/i18n.yml`. Chinese paper
 summaries and image descriptions are paired with the original fields in
 `_data/selected_publications.yml`. Both full publication lists render the same
-original bibliography: titles, authors, venues, years, and links remain in their
-published language. Chinese project titles and award names use the author's
+bibliography. `_data/publication_translations.json` supplies the original Chinese
+titles, author names and journal names of the two Chinese-language papers for
+the Chinese page. Existing English-language citations remain unchanged.
+Chinese project titles and award names use the author's
 confirmed wording. Update the paired biography and project files together.
 
 Run `python3 _tools/check_localization.py _site` after building to check the six

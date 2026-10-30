@@ -1,9 +1,9 @@
 {% comment %}
-The original publication Markdown remains the only bibliography source.
+The current publication Markdown remains the bibliography source.
 Each entry follows its existing format: authors, quoted title, venue/year,
-then the Paper and optional Code links. Keep the original include unchanged
-for the archived profile. _tools/check_publications.py verifies the rendered
-page against every original field and link.
+then the Paper and optional Code links. The archived profile uses a frozen copy.
+Chinese-language papers use their publisher-provided Chinese metadata on the
+Chinese page. _tools/check_publications.py verifies every field and link.
 {% endcomment %}
 {% assign lang = page.lang | default: 'en' %}
 {% assign labels = site.data.i18n[lang] %}
@@ -47,6 +47,12 @@ page against every original field and link.
       {% if venue contains candidate[1].match %}{% assign venue_data = candidate[1] %}{% break %}{% endif %}
     {% endfor %}
     {% assign paper_url = details | split: '[**[Link]**](' | last | split: ')' | first %}
+    {% assign translation = site.data.publication_translations[paper_url][lang] %}
+    {% if translation %}
+      {% assign title = translation.title %}
+      {% assign authors = translation.authors %}
+      {% assign venue_display = translation.venue %}
+    {% endif %}
     <article class="publication-list__entry" aria-labelledby="publication-{{ group_number }}-{{ forloop.index0 }}">
       <h3 id="publication-{{ group_number }}-{{ forloop.index0 }}"><a href="{{ paper_url }}">{{ title | escape }}</a></h3>
       <p class="publication-list__authors">{{ authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>

@@ -1,6 +1,6 @@
 {%- assign metrics = include.venue -%}
 {%- if metrics.ccf -%}
- <span class="publication-metric" title="CCF {{ metrics.ccf_year }}">&nbsp;· CCF {{ metrics.ccf | escape }}</span>
+ <span class="publication-metric" title="CCF {{ metrics.ccf_year }}{% if metrics.ccf_catalogue %}{% if page.lang == 'zh' %} 计算领域高质量科技期刊分级目录（T1/T2/T3）{% else %} {{ metrics.ccf_catalogue | escape }}{% endif %}{% endif %}">&nbsp;· CCF {{ metrics.ccf | escape }}</span>
 {%- endif -%}
 {%- if metrics.jcr -%}
 {%- capture metric_context -%}JCR {{ metrics.jcr.release }} ({{ metrics.jcr.year }} data){% if metrics.jcr.snapshot %}, {{ metrics.jcr.snapshot }}{% endif %}: {{ metrics.jcr.category }}{% if metrics.jcr.rank %}; {{ metrics.jcr.rank }}/{{ metrics.jcr.total }}{% endif %}.{% if metrics.jcr.percentile %} Highest JIF percentile among the journal's JCR categories.{% endif %}{%- endcapture -%}
