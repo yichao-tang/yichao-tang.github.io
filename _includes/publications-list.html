@@ -1,37 +1,37 @@
 {% comment %}
-Citation text stays in the existing Markdown bibliography. The audited
-chronology supplies display order and grouping years only; citation years
-remain independent. The archived profile uses its frozen Markdown copy.
+Citation text and research topics stay in the existing Markdown bibliography.
+Audited dates determine order within citation years, inside each research topic.
+The archived profile uses its frozen Markdown copy.
 {% endcomment %}
 {% assign lang = page.lang | default: 'en' %}
 {% assign labels = site.data.i18n[lang] %}
 {% capture newline %}
 {% endcapture %}
 {% assign paper_separator = newline | append: '- ' %}
-{% assign entries = include.source | split: paper_separator %}
+{% assign groups = include.source | split: '### ' %}
 <div class="publication-list">
   <h1 id="-publications">📝 {{ labels.publications | escape }}</h1>
-  <nav class="publication-list__topics" aria-label="{{ labels.publication_years | escape }}">
-    {% assign previous_year = '' %}
-    {% for record in site.data.publication_chronology %}
-    {% if record.group_year != previous_year %}
-    <a href="#publication-year-{{ record.group_year }}">{{ record.group_year }}{% if record.earlier %} {{ labels.and_earlier | escape }}{% endif %}</a>
-    {% assign previous_year = record.group_year %}
-    {% endif %}
-    {% endfor %}
+  <nav class="publication-list__topics" aria-label="{{ labels.publication_topics | escape }}">
+    {% for group in groups %}{% unless forloop.first %}
+    {% assign group_name = group | split: newline | first | strip %}
+    {% assign topic_index = forloop.index0 | minus: 1 %}
+    {% assign group_name = labels.topic_names[topic_index] | default: group_name %}
+    <a href="#publication-group-{{ forloop.index0 }}">{{ group_name | escape }}</a>
+    {% endunless %}{% endfor %}
   </nav>
-  <p class="publication-list__order-note">{{ labels.publication_order_note | escape }}</p>
   <p class="publication-list__legend">{% if lang == 'zh' %}# {{ labels.equal_contribution | escape }}；* {{ labels.corresponding_author | escape }}。{% else %}# {{ labels.equal_contribution | escape }}. * {{ labels.corresponding_author | escape }}.{% endif %}</p>
-  {% assign previous_year = '' %}
-  {% for record in site.data.publication_chronology %}
-    {% if record.group_year != previous_year %}
-      {% unless forloop.first %}</section>{% endunless %}
-      <section class="publication-list__group" aria-labelledby="publication-year-{{ record.group_year }}">
-      <h2 id="publication-year-{{ record.group_year }}">{{ record.group_year }}{% if record.earlier %} {{ labels.and_earlier | escape }}{% endif %}</h2>
-      {% assign previous_year = record.group_year %}
-    {% endif %}
-    {% assign entry = nil %}
+  {% for group in groups %}{% unless forloop.first %}
+  {% assign group_number = forloop.index0 %}
+  {% assign group_name = group | split: newline | first | strip %}
+  {% assign topic_index = group_number | minus: 1 %}
+  {% assign group_name = labels.topic_names[topic_index] | default: group_name %}
+  {% assign entries = group | split: paper_separator %}
+  <section class="publication-list__group" aria-labelledby="publication-group-{{ group_number }}">
+    <h2 id="publication-group-{{ group_number }}">{{ group_name | escape }}</h2>
+    {% for record in site.data.publication_chronology %}
     {% assign paper_marker = '[**[Link]**](' | append: record.paper_url | append: ')' %}
+    {% if group contains paper_marker %}
+    {% assign entry = nil %}
     {% for candidate in entries %}
       {% if candidate contains paper_marker %}{% assign entry = candidate %}{% break %}{% endif %}
     {% endfor %}
@@ -58,7 +58,6 @@ remain independent. The archived profile uses its frozen Markdown copy.
       {% assign authors = translation.authors %}
       {% assign venue_display = translation.venue %}
     {% endif %}
-    {% if record.legacy_anchor %}<span id="{{ record.legacy_anchor }}" class="publication-list__legacy-anchor" aria-hidden="true"></span>{% endif %}
     <article class="publication-list__entry" data-publication-id="{{ record.id }}" aria-labelledby="publication-{{ record.id }}">
       <h3 id="publication-{{ record.id }}"><a href="{{ paper_url }}">{{ title | escape }}</a></h3>
       <p class="publication-list__authors">{{ authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
@@ -66,6 +65,8 @@ remain independent. The archived profile uses its frozen Markdown copy.
       <p class="publication-list__links"><a href="{{ paper_url }}">[{{ labels.paper | escape }}]</a>{% if details contains '[**[Code]**](' %}{% assign code_url = details | split: '[**[Code]**](' | last | split: ')' | first %} <a href="{{ code_url }}">[{{ labels.code | escape }}]</a>{% endif %}</p>
     </article>
     {% endif %}
-  {% endfor %}
+    {% endif %}
+    {% endfor %}
   </section>
+  {% endunless %}{% endfor %}
 </div>

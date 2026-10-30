@@ -15,13 +15,22 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 APPROVED_ORDER = (
-    "qs-qim-rrw", "jpeg-joca", "stylesign", "dnlmark", "slmark", "genptw",
+    "qs-qim-rrw", "jpeg-joca", "stylesign", "dnlmark", "genptw", "slmark",
     "frpcet-rrw", "stdm-rrw", "pht-rrw", "pzms-rrw", "dmspso-gd-ijcini",
-    "dms-pio-ijcsm", "dmspso-el-ssci", "dms-gpso-computing",
+    "dms-pio-ijcsm", "dms-gpso-computing", "dmspso-el-ssci",
     "dmspso-el-access", "dms-gpso-cec", "fapso-jocs",
 )
 HOME_ORDER = ("qs-qim-rrw", "dnlmark", "genptw", "frpcet-rrw", "stdm-rrw")
-YEAR_GROUPS = ("2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018")
+DISPLAY_ORDER = (
+    "stylesign", "dnlmark", "genptw", "slmark",
+    "qs-qim-rrw", "jpeg-joca", "frpcet-rrw", "stdm-rrw", "pht-rrw", "pzms-rrw",
+    "dmspso-gd-ijcini", "dms-pio-ijcsm", "dms-gpso-computing",
+    "dmspso-el-ssci", "dmspso-el-access", "dms-gpso-cec", "fapso-jocs",
+)
+TOPIC_NAMES = (
+    ("🛡️ Generative AI Security & Watermarking", "🔐 Robust & Reversible Watermarking", "🧮 Evolutionary Computation"),
+    ("🛡️ 生成式人工智能安全", "🔐 鲁棒可逆水印", "🧮 演化计算"),
+)
 
 
 def plain_markdown(value):
@@ -75,38 +84,51 @@ def publication_chronology():
     by_url = {entry["paper"]: entry for entry in originals}
     if len(by_url) != len(originals) or len(set(urls)) != len(urls) or set(urls) != set(by_url):
         raise ValueError("Chronology must reference each original citation URL exactly once.")
-    known_dates, unknown_ids, groups = [], [], []
+    unknown_ids = []
     for row in records:
         publication_date = row["sort_date"]
-        group = str(row["group_year"])
-        if bool(row.get("earlier", False)) != (row["id"] == "fapso-jocs"):
-            raise ValueError("Only the undated JoCS paper should use the 'or earlier' label.")
         if publication_date is None:
             unknown_ids.append(row["id"])
-            if group != "2018":
-                raise ValueError("The undated JoCS paper must remain in the 2018-or-earlier group.")
         else:
             parsed = date.fromisoformat(publication_date)
-            if parsed.isoformat() != publication_date or str(parsed.year) != group:
-                raise ValueError("Invalid chronology date or year group: " + row["id"])
-            known_dates.append(parsed)
-        if not groups or groups[-1] != group:
-            groups.append(group)
+            if parsed.isoformat() != publication_date:
+                raise ValueError("Invalid chronology date: " + row["id"])
         citation_year = re.search(r", (\d{4})$", by_url[row["paper_url"]]["venue"])
         if not citation_year or int(citation_year.group(1)) != int(row["citation_year"]):
             raise ValueError("Chronology changed a citation's documented year: " + row["id"])
-    if known_dates != sorted(known_dates, reverse=True):
-        raise ValueError("Known publication/platform dates are not in descending order.")
+    keys = [(int(row["citation_year"]), row["sort_date"] or "") for row in records]
+    if keys != sorted(keys, reverse=True):
+        raise ValueError("Citation years, then same-year publication dates, must be descending.")
     if unknown_ids != ["fapso-jocs"]:
         raise ValueError("Keep the unresolved JoCS date null; all other dates must be documented.")
-    if tuple(groups) != YEAR_GROUPS:
-        raise ValueError("Publication year groups are missing, repeated or out of order.")
     return records
 
 
+def source_topic_urls():
+    """Read topic membership from the preserved source bibliography."""
+    source = (ROOT / "_pages/includes/pub_short.md").read_text(encoding="utf-8")
+    groups = []
+    for line in source.splitlines():
+        if line.startswith("### "):
+            groups.append([])
+        elif line.startswith("- "):
+            match = re.search(r"\[\*\*\[Link\]\*\*\]\(([^)]+)\)", line)
+            if not groups or not match:
+                raise ValueError("Publication has no source topic or Paper link.")
+            groups[-1].append(match.group(1))
+    if len(groups) != 3 or any(not group for group in groups):
+        raise ValueError("The original three publication topics must remain populated.")
+    return groups
+
+
 def chronologically_ordered_entries(language="en"):
+    """Keep source topics, sorting each by citation year then verified date."""
     by_url = {entry["paper"]: entry for entry in source_entries(language)}
-    return [by_url[row["paper_url"]] for row in publication_chronology()]
+    records = publication_chronology()
+    ordered = [row for group in source_topic_urls() for row in records if row["paper_url"] in group]
+    if tuple(row["id"] for row in ordered) != DISPLAY_ORDER:
+        raise ValueError("The grouped display differs from the approved topic/order sequence.")
+    return [by_url[row["paper_url"]] for row in ordered]
 
 
 class PublicationParser(HTMLParser):
@@ -183,7 +205,7 @@ def main():
     code_count = sum(entry["code"] is not None for entry in expected)
     print(
         f"PASS: {len(expected)} publications match source titles, authors, "
-        f"venues/years and Paper links in approved chronological order; "
+        f"venues/years and Paper links in approved topic and date order; "
         f"{code_count} Code links preserved; JIF percentile labels retained."
     )
 

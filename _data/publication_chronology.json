@@ -3,17 +3,14 @@
     "id": "qs-qim-rrw",
     "paper_url": "https://ieeexplore.ieee.org/document/11753674",
     "sort_date": "2026-10-26",
-    "group_year": "2026",
     "citation_year": 2026,
     "date_kind": "IEEE Date of Publication",
-    "source_url": "https://ieeexplore.ieee.org/document/11753674",
-    "legacy_anchor": "publication-group-2"
+    "source_url": "https://ieeexplore.ieee.org/document/11753674"
   },
   {
     "id": "jpeg-joca",
     "paper_url": "https://www.joca.cn/EN/10.11772/j.issn.1001-9081.2026091086",
     "sort_date": "2026-10-21",
-    "group_year": "2026",
     "citation_year": 2026,
     "date_kind": "Publisher citation_online_date / citation_publication_date",
     "source_url": "https://www.joca.cn/EN/10.11772/j.issn.1001-9081.2026091086"
@@ -22,45 +19,39 @@
     "id": "stylesign",
     "paper_url": "https://www.cjig.cn/zh/article/doi/10.11834/jig.260043/",
     "sort_date": "2026-05-12",
-    "group_year": "2026",
     "citation_year": 2026,
     "date_kind": "Publisher citation_online_date",
-    "source_url": "https://www.cjig.cn/zh/article/doi/10.11834/jig.260043/",
-    "legacy_anchor": "publication-group-1"
+    "source_url": "https://www.cjig.cn/zh/article/doi/10.11834/jig.260043/"
   },
   {
     "id": "dnlmark",
     "paper_url": "https://ieeexplore.ieee.org/abstract/document/11464215",
     "sort_date": "2026-04-21",
-    "group_year": "2026",
     "citation_year": 2026,
     "date_kind": "Date Added to IEEE Xplore",
     "source_url": "https://ieeexplore.ieee.org/abstract/document/11464215"
   },
   {
+    "id": "genptw",
+    "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37412",
+    "sort_date": "2026-03-14",
+    "citation_year": 2026,
+    "date_kind": "AAAI Published date",
+    "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37412"
+  },
+  {
     "id": "slmark",
     "paper_url": "https://ieeexplore.ieee.org/abstract/document/11452609/",
     "sort_date": "2026-04-01",
-    "group_year": "2026",
     "citation_year": 2025,
     "date_kind": "Date Added to IEEE Xplore",
     "source_url": "https://ieeexplore.ieee.org/abstract/document/11452609/",
     "note": "Upload year2026 differs from conference/bibliographic year2025; preserve citation year separately."
   },
   {
-    "id": "genptw",
-    "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37412",
-    "sort_date": "2026-03-14",
-    "group_year": "2026",
-    "citation_year": 2026,
-    "date_kind": "AAAI Published date",
-    "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37412"
-  },
-  {
     "id": "frpcet-rrw",
     "paper_url": "https://ieeexplore.ieee.org/abstract/document/11207540/",
     "sort_date": "2025-10-20",
-    "group_year": "2025",
     "citation_year": 2025,
     "date_kind": "IEEE Date of Publication",
     "source_url": "https://ieeexplore.ieee.org/abstract/document/11207540/",
@@ -70,7 +61,6 @@
     "id": "stdm-rrw",
     "paper_url": "https://ieeexplore.ieee.org/document/10458701",
     "sort_date": "2024-03-04",
-    "group_year": "2024",
     "citation_year": 2024,
     "date_kind": "IEEE Date of Publication",
     "source_url": "https://ieeexplore.ieee.org/document/10458701"
@@ -79,7 +69,6 @@
     "id": "pht-rrw",
     "paper_url": "https://www.sciencedirect.com/science/article/abs/pii/S0020025523013713",
     "sort_date": "2023-10-18",
-    "group_year": "2023",
     "citation_year": 2024,
     "date_kind": "Original publisher PDF: Available online",
     "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0020025523013713",
@@ -89,7 +78,6 @@
     "id": "pzms-rrw",
     "paper_url": "https://ieeexplore.ieee.org/document/9928284/",
     "sort_date": "2022-10-25",
-    "group_year": "2022",
     "citation_year": 2022,
     "date_kind": "IEEE Date of Publication",
     "source_url": "https://ieeexplore.ieee.org/document/9928284/",
@@ -99,48 +87,42 @@
     "id": "dmspso-gd-ijcini",
     "paper_url": "https://www.igi-global.com/article/a-dynamic-multi-swarm-particle-swarm-optimization-with-global-detection-mechanism/294566",
     "sort_date": "2021-10-01",
-    "group_year": "2021",
     "citation_year": 2021,
     "date_kind": "Publisher citation_publication_date; no separate online-first field",
     "source_url": "https://www.igi-global.com/article/a-dynamic-multi-swarm-particle-swarm-optimization-with-global-detection-mechanism/294566",
-    "note": "Crossref published-print says2022-06-03 and created2022-01-04. Prefer publisher page publication-date2021-10-01, consistent volume15issue4 copyright2021, but do not call this a separately confirmed online-first date.",
-    "legacy_anchor": "publication-group-3"
+    "note": "Crossref published-print says2022-06-03 and created2022-01-04. Prefer publisher page publication-date2021-10-01, consistent volume15issue4 copyright2021, but do not call this a separately confirmed online-first date."
   },
   {
     "id": "dms-pio-ijcsm",
     "paper_url": "https://www.inderscienceonline.com/doi/abs/10.1504/IJCSM.2021.116762",
     "sort_date": "2021-08-02",
-    "group_year": "2021",
     "citation_year": 2021,
     "date_kind": "Published online explicitly stated on publisher page",
     "source_url": "https://www.inderscience.com/info/e_inarticle.php?artid=116762",
     "note": "Acceptance is nearly three years earlier than publication; do not substitute silently."
   },
   {
-    "id": "dmspso-el-ssci",
-    "paper_url": "https://ieeexplore.ieee.org/abstract/document/9002680",
-    "sort_date": "2020-02-20",
-    "group_year": "2020",
-    "citation_year": 2019,
-    "date_kind": "Date Added to IEEE Xplore, verified by sibling recent-date agent in normal browser",
-    "source_url": "https://ieeexplore.ieee.org/document/9002680/",
-    "note": "Conference year2019 differs from first IEEE online2020. Crossref created2020-02-21 is registration, one day later, not publication."
-  },
-  {
     "id": "dms-gpso-computing",
     "paper_url": "https://link.springer.com/article/10.1007/s00607-019-00782-9",
     "sort_date": "2020-01-04",
-    "group_year": "2020",
     "citation_year": 2020,
     "date_kind": "Publisher Published / Version of Record; original PDF Published online",
     "source_url": "https://link.springer.com/article/10.1007/s00607-019-00782-9",
     "note": "DOI contains2019 but actual publication2020-01-04."
   },
   {
+    "id": "dmspso-el-ssci",
+    "paper_url": "https://ieeexplore.ieee.org/abstract/document/9002680",
+    "sort_date": "2020-02-20",
+    "citation_year": 2019,
+    "date_kind": "Date Added to IEEE Xplore",
+    "source_url": "https://ieeexplore.ieee.org/document/9002680/",
+    "note": "Conference year2019 differs from first IEEE online2020. Crossref created2020-02-21 is registration, one day later, not publication."
+  },
+  {
     "id": "dmspso-el-access",
     "paper_url": "https://ieeexplore.ieee.org/abstract/document/8936982",
     "sort_date": "2019-12-19",
-    "group_year": "2019",
     "citation_year": 2019,
     "date_kind": "PDF date of publication and IEEE browser Date of Publication",
     "source_url": "https://ieeexplore.ieee.org/document/8936982/",
@@ -150,9 +132,8 @@
     "id": "dms-gpso-cec",
     "paper_url": "https://ieeexplore.ieee.org/abstract/document/8790324",
     "sort_date": "2019-08-08",
-    "group_year": "2019",
     "citation_year": 2019,
-    "date_kind": "Date Added to IEEE Xplore, verified by sibling recent-date agent in normal browser",
+    "date_kind": "Date Added to IEEE Xplore",
     "source_url": "https://ieeexplore.ieee.org/document/8790324/",
     "note": "Crossref created2019-08-09 is registration, not firstonline."
   },
@@ -160,11 +141,9 @@
     "id": "fapso-jocs",
     "paper_url": "https://www.sciencedirect.com/science/article/abs/pii/S1877750317303538",
     "sort_date": null,
-    "group_year": "2018",
     "citation_year": 2018,
     "date_kind": "Firstonline exact date unverified",
     "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S1877750317303538",
-    "note": "First online day unverified. The 2018 journal issue establishes the latest grouping year; no exact online date is invented.",
-    "earlier": true
+    "note": "Exact first online date is unverified. Retain the 2018 citation year and a null sort_date."
   }
 ]
