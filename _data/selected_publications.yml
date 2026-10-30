@@ -16,24 +16,6 @@
   image_alt: "QS-QIM Figure 4: enlarged decoding regions equalized into uniform strips, with codeword lines and decoding boundaries."
   image_alt_zh: "解码区域扩展并均衡为规则条带的示意，包含码字线与解码边界。"
 
-- id: genptw
-  short_name: GenPTW
-  title: "GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization"
-  authors: "Zhenliang Gan, Chunya Liu, <strong>Yichao Tang</strong>, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang*."
-  venue: AAAI
-  venue_key: aaai
-  year: 2026
-  summary: "Adds copyright protection and tamper localization to existing image generators with a single watermark."
-  summary_zh: "让现有图像生成模型通过同一水印实现版权保护与篡改定位。"
-  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/37412
-  code_url: https://github.com/yichao-tang/GenPTW
-  image: /images/papers/genptw-method.webp
-  image_full: /images/papers/genptw-method.png
-  image_width: 1200
-  image_height: 472
-  image_alt: "GenPTW method with attention-based and spatial watermark fusion, followed by joint watermark extraction and edit localization."
-  image_alt_zh: "GenPTW 的注意力融合、空间融合，以及水印提取与编辑定位流程。"
-
 - id: dnlmark
   short_name: DNLMark
   title: "DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing"
@@ -51,6 +33,24 @@
   image_height: 508
   image_alt: "DNLMark architecture with low-frequency watermark embedding, image noise for conventional distortions, latent noise for simulated semantic edits, and watermark extraction."
   image_alt_zh: "DNLMark 的低频水印嵌入流程，使用图像噪声模拟常规失真、潜空间噪声模拟语义编辑，并提取水印。"
+
+- id: genptw
+  short_name: GenPTW
+  title: "GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization"
+  authors: "Zhenliang Gan, Chunya Liu, <strong>Yichao Tang</strong>, Binghao Wang, Shiwen Cui, Weiqiang Wang, Xinpeng Zhang*."
+  venue: AAAI
+  venue_key: aaai
+  year: 2026
+  summary: "Adds copyright protection and tamper localization to existing image generators with a single watermark."
+  summary_zh: "让现有图像生成模型通过同一水印实现版权保护与篡改定位。"
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/37412
+  code_url: https://github.com/yichao-tang/GenPTW
+  image: /images/papers/genptw-method.webp
+  image_full: /images/papers/genptw-method.png
+  image_width: 1200
+  image_height: 472
+  image_alt: "GenPTW method with attention-based and spatial watermark fusion, followed by joint watermark extraction and edit localization."
+  image_alt_zh: "GenPTW 的注意力融合、空间融合，以及水印提取与编辑定位流程。"
 
 - id: frpcet-rrw
   short_name: FrPCET-RRW

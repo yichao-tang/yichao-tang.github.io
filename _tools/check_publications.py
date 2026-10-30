@@ -6,6 +6,7 @@ No third-party Python packages are required.
 
 import html
 import json
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -13,6 +14,14 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
+APPROVED_ORDER = (
+    "qs-qim-rrw", "jpeg-joca", "stylesign", "dnlmark", "slmark", "genptw",
+    "frpcet-rrw", "stdm-rrw", "pht-rrw", "pzms-rrw", "dmspso-gd-ijcini",
+    "dms-pio-ijcsm", "dmspso-el-ssci", "dms-gpso-computing",
+    "dmspso-el-access", "dms-gpso-cec", "fapso-jocs",
+)
+HOME_ORDER = ("qs-qim-rrw", "dnlmark", "genptw", "frpcet-rrw", "stdm-rrw")
+YEAR_GROUPS = ("2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018")
 
 
 def plain_markdown(value):
@@ -54,6 +63,50 @@ def source_entries(language="en", filename="_pages/includes/pub_short.md"):
             for field in ("title", "authors", "venue"):
                 result[-1][field] = plain_markdown(translation[field])
     return result
+
+
+def publication_chronology():
+    """Validate the approved ordering separately from the citation text."""
+    records = json.loads((ROOT / "_data/publication_chronology.json").read_text(encoding="utf-8"))
+    if tuple(row["id"] for row in records) != APPROVED_ORDER:
+        raise ValueError("Publication chronology differs from the approved 17-paper order.")
+    urls = [row["paper_url"] for row in records]
+    originals = source_entries()
+    by_url = {entry["paper"]: entry for entry in originals}
+    if len(by_url) != len(originals) or len(set(urls)) != len(urls) or set(urls) != set(by_url):
+        raise ValueError("Chronology must reference each original citation URL exactly once.")
+    known_dates, unknown_ids, groups = [], [], []
+    for row in records:
+        publication_date = row["sort_date"]
+        group = str(row["group_year"])
+        if bool(row.get("earlier", False)) != (row["id"] == "fapso-jocs"):
+            raise ValueError("Only the undated JoCS paper should use the 'or earlier' label.")
+        if publication_date is None:
+            unknown_ids.append(row["id"])
+            if group != "2018":
+                raise ValueError("The undated JoCS paper must remain in the 2018-or-earlier group.")
+        else:
+            parsed = date.fromisoformat(publication_date)
+            if parsed.isoformat() != publication_date or str(parsed.year) != group:
+                raise ValueError("Invalid chronology date or year group: " + row["id"])
+            known_dates.append(parsed)
+        if not groups or groups[-1] != group:
+            groups.append(group)
+        citation_year = re.search(r", (\d{4})$", by_url[row["paper_url"]]["venue"])
+        if not citation_year or int(citation_year.group(1)) != int(row["citation_year"]):
+            raise ValueError("Chronology changed a citation's documented year: " + row["id"])
+    if known_dates != sorted(known_dates, reverse=True):
+        raise ValueError("Known publication/platform dates are not in descending order.")
+    if unknown_ids != ["fapso-jocs"]:
+        raise ValueError("Keep the unresolved JoCS date null; all other dates must be documented.")
+    if tuple(groups) != YEAR_GROUPS:
+        raise ValueError("Publication year groups are missing, repeated or out of order.")
+    return records
+
+
+def chronologically_ordered_entries(language="en"):
+    by_url = {entry["paper"]: entry for entry in source_entries(language)}
+    return [by_url[row["paper_url"]] for row in publication_chronology()]
 
 
 class PublicationParser(HTMLParser):
@@ -110,7 +163,7 @@ def main():
     rendered = output.read_text(encoding="utf-8")
     parser = PublicationParser()
     parser.feed(rendered)
-    expected = source_entries()
+    expected = chronologically_ordered_entries()
     if parser.entries != expected:
         for index, (before, after) in enumerate(zip(expected, parser.entries), 1):
             if before != after:
@@ -125,10 +178,13 @@ def main():
         raise SystemExit("Contribution/corresponding-author legend is missing.")
     if r"\&amp;" in rendered or r"\& Security" in rendered:
         raise SystemExit("The CRESS escaped ampersand is still visible.")
+    if "JCI percentile:" in rendered or "JIF percentile:" not in rendered:
+        raise SystemExit("The approved JIF percentile display was replaced or removed.")
     code_count = sum(entry["code"] is not None for entry in expected)
     print(
         f"PASS: {len(expected)} publications match source titles, authors, "
-        f"venues/years and Paper links; {code_count} Code links preserved."
+        f"venues/years and Paper links in approved chronological order; "
+        f"{code_count} Code links preserved; JIF percentile labels retained."
     )
 
 
