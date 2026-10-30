@@ -1,5 +1,37 @@
 # Website restore points
 
+## Before restoring research-topic groups on October 30, 2026
+
+The author chose the original research-topic grouping and removal of the
+sorting explanation, continuing the authorization to publish the homepage
+updates directly. The immediately preceding live site is preserved at:
+
+- Commit: `9490f57168592bd28a7fe2f3a43fbf398f298d6d`
+- Backup branch: [`backup/pre-topic-groups-2026-10-30`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-topic-groups-2026-10-30)
+- [Download that source ZIP](https://github.com/yichao-tang/yichao-tang.github.io/archive/9490f57168592bd28a7fe2f3a43fbf398f298d6d.zip)
+
+Leave the backup branch unchanged. Local copies outside the working checkout
+are `homepage-before-topic-groups-2026-10-30.zip` and the verified complete-history
+`homepage-before-topic-groups-2026-10-30.bundle`. Earlier restore points remain
+available below.
+
+For an immediate undo, use **Revert** on the merged topic-group restoration
+pull request, then merge the resulting restore pull request. To restore the
+exact saved source after subsequent changes, use a clean checkout and branch:
+
+```powershell
+git fetch origin
+git switch -c restore/pre-topic-groups-2026-10-30 origin/main
+git restore --source=9490f57168592bd28a7fe2f3a43fbf398f298d6d --staged --worktree -- .
+git diff --cached --stat
+git commit -m "Restore bilingual homepage before topic-group restoration"
+git push -u origin restore/pre-topic-groups-2026-10-30
+```
+
+Open and merge a pull request to `main`, then wait for GitHub Pages deployment.
+This preserves Git history without a force push. An exact restore also removes
+later source changes.
+
 ## Before the chronological-publications release of October 30, 2026
 
 The author approved chronological ordering and direct publication on October 30,
@@ -147,7 +179,8 @@ directly introduces the current appointment, research interests, postdoctoral an
 Ph.D. background, academic exchange, and email, followed by five selected
 publications. `/publications/` contains all 17 publications in a title-first
 layout, rendered from `pub_short.md`; the original 15 citations remain intact.
-Display order and year navigation follow the audited
+The original research topics come from that Markdown source. Inside each topic,
+display order uses citation year and then the audited dates in
 `_data/publication_chronology.json`; see [date rules](PUBLICATION-CHRONOLOGY.md).
 The two Chinese papers display publisher-supplied Chinese titles, authors and
 full journal names on `/zh/publications/`. The build checks every title,

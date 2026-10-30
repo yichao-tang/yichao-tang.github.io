@@ -57,7 +57,7 @@ $(document).ready(function(){
     $(".author__urls-wrapper button").toggleClass("open");
   });
 
-  // Year links use native anchors so their CSS scroll margin clears the masthead.
+  // Publication topic links use native anchors to clear the sticky masthead.
   $("a").not(".publication-list__topics a").smoothScroll({offset: -20});
 
   // add lightbox class to all image links

@@ -8,7 +8,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 
-from check_publications import (HOME_ORDER, YEAR_GROUPS, PublicationParser, ROOT,
+from check_publications import (HOME_ORDER, TOPIC_NAMES, PublicationParser, ROOT,
                                 chronologically_ordered_entries, publication_chronology, source_entries)
 
 
@@ -33,6 +33,8 @@ class Page(HTMLParser):
         self.lang, self.canonical, self.alternates = "", [], []
         self.nav, self.nav_current, self.switch = [], [], []
         self.year_links, self.year_headings = [], []
+        self.topic_links, self.topic_headings = [], []
+        self.topic_link, self.topic_heading = None, None
         self.nav_scope = None
         self.content_depth = 0
         self.paragraph, self.paragraphs = None, []
@@ -55,7 +57,8 @@ class Page(HTMLParser):
                 self.alternates.append((attrs["hreflang"], attrs.get("href")))
         elif tag == "nav":
             self.nav_scope = ("main" if attrs.get("id") == "site-nav"
-                              else "switch" if "language-switch" in classes else None)
+                              else "switch" if "language-switch" in classes
+                              else "topics" if "publication-list__topics" in classes else None)
         elif tag == "section":
             if self.content_depth or "page__content" in classes:
                 self.content_depth += 1
@@ -64,6 +67,8 @@ class Page(HTMLParser):
             fragment = href.rsplit("#", 1)[-1] if "#" in href else ""
             if fragment.startswith("publication-year-"):
                 self.year_links.append(fragment)
+            if self.nav_scope == "topics":
+                self.topic_link = {"href": href, "text": ""}
             if self.nav_scope == "main":
                 self.nav.append(href)
                 if attrs.get("aria-current") == "page":
@@ -84,6 +89,8 @@ class Page(HTMLParser):
                                   "inside_paper": self.paper is not None}
         if tag == "h2" and attrs.get("id", "").startswith("publication-year-"):
             self.year_headings.append(attrs["id"])
+        if tag == "h2" and attrs.get("id", "").startswith("publication-group-"):
+            self.topic_heading = {"id": attrs["id"], "text": ""}
         if tag == "article" and "selected-publication" in classes:
             self.paper = {key: "" for key in
                           ("title", "title_url", "authors", "venue", "summary", "image", "image_full", "alt")}
@@ -106,6 +113,10 @@ class Page(HTMLParser):
                     self.paper["links"].append(attrs.get("href", ""))
 
     def handle_data(self, data):
+        if self.topic_link is not None:
+            self.topic_link["text"] += data
+        if self.topic_heading is not None:
+            self.topic_heading["text"] += data
         if self.paragraph is not None:
             self.paragraph["text"] += data
         if self.item is not None:
@@ -114,6 +125,12 @@ class Page(HTMLParser):
             self.paper[self.paper_field] += data
 
     def handle_endtag(self, tag):
+        if tag == "a" and self.topic_link is not None:
+            self.topic_links.append((self.topic_link["href"], compact(self.topic_link["text"])))
+            self.topic_link = None
+        if tag == "h2" and self.topic_heading is not None:
+            self.topic_headings.append((self.topic_heading["id"], compact(self.topic_heading["text"])))
+            self.topic_heading = None
         if tag == "nav":
             self.nav_scope = None
         elif tag == "section" and self.content_depth:
@@ -191,10 +208,18 @@ def main():
         publications.feed(pages["publications", index].html)
         require(publications.entries == chronologically_ordered_entries(("en", "zh")[index]),
                 f"{routes['publications'][index]}: bibliography fields, translations or order changed.")
-        year_targets = ["publication-year-" + year for year in YEAR_GROUPS]
-        require(pages["publications", index].year_links == year_targets and
-                pages["publications", index].year_headings == year_targets,
-                f"{routes['publications'][index]}: year links and headings are missing or out of order.")
+        page = pages["publications", index]
+        topic_targets = ["publication-group-" + str(number) for number in (1, 2, 3)]
+        require(page.topic_links == [("#" + target, label)
+                                     for target, label in zip(topic_targets, TOPIC_NAMES[index])] and
+                page.topic_headings == list(zip(topic_targets, TOPIC_NAMES[index])),
+                f"{routes['publications'][index]}: original topic links or headings changed.")
+        require(not page.year_links and not page.year_headings,
+                f"{routes['publications'][index]}: obsolete year navigation remains.")
+        require("publication-list__order-note" not in page.html and
+                "Ordered by first publication or online availability" not in page.html and
+                "按首次发表或平台上线时间倒序排列" not in page.html,
+                f"{routes['publications'][index]}: the rejected sorting explanation remains.")
 
     homes = [pages["home", index] for index in (0, 1)]
     require(all(len(page.papers) == 5 for page in homes), "Both Home pages must contain five selected papers.")
@@ -267,7 +292,8 @@ def main():
             "2026091086" not in archive.html,
             "The original profile must retain its 15-paper, five-project snapshot.")
     print("PASS: 6 bilingual routes, navigation/switches/canonical/hreflang; "
-          "17+17 chronological publications with matching year navigation; 15 original citations preserved; "
+          "17+17 publications in the three original topics, sorted within topics; no sorting explanation; "
+          "15 original citations preserved; "
           "5 selected papers in approved order; JIF percentile labels retained; 2 separate contact paragraphs; "
           "2 PI projects, 4 awards and 3 degrees per About; unchanged English archive content.")
 

@@ -1,26 +1,28 @@
-# Chronological publication ordering — October 30, 2026
+# Publication ordering and research topics — October 30, 2026
 
-The author approved this order and direct publication on October 30, 2026.
+The author approved direct publication on October 30, 2026, and subsequently
+chose restoration of the original research-topic groups without a sorting
+explanation on the public pages.
 Existing CCF labels, JCR quartiles and **JIF percentiles** are retained. The
-previous live source is frozen at `d947d8d23323640da7567afe58f17df4a4441cd2` on
-`backup/pre-chronological-order-2026-10-30`; see [restore steps](RESTORE.md).
+previous live source is frozen at `9490f57168592bd28a7fe2f3a43fbf398f298d6d` on
+`backup/pre-topic-groups-2026-10-30`; see [restore steps](RESTORE.md).
 
 ## Display policy
 
 - Home retains the same five selected papers, figures, summaries and links.
   Its order is QS-QIM-RRW, DNLMark, GenPTW, FrPCET-RRW, STDM-RRW.
-- Both Publications pages contain all 17 papers in descending first-publication
-  or publisher-platform availability order. Year navigation replaces topic
-  navigation. A short bilingual note explains the sort date/citation-year
-  distinction. The three old topic fragments still locate their first paper.
-  Year links use native anchors and the heading's CSS scroll margin so the
-  sticky masthead does not cover the destination. Other smooth-scroll behavior
-  and all figure-zoom code remain unchanged.
+- Both Publications pages contain all 17 papers in the original three research
+  topics. Each topic is ordered by the displayed citation year, descending,
+  then by the verified publication/platform date for papers in the same year.
+  The navigation links point to the three topic headings. There are no year
+  headings, year navigation or sorting-explanation paragraphs on the public page.
+  Topic links use native anchors and CSS scroll margin to clear the sticky
+  masthead. Other smooth scrolling and all figure-zoom code are unchanged.
 - The source bibliography remains `_pages/includes/pub_short.md`. Dates and
   display order live in `_data/publication_chronology.json`; Chinese-language
   citation translations remain in `_data/publication_translations.json`.
-- The final JoCS paper has no verified exact online date. It stays last under
-  **2018 or earlier**, based on its 2018 journal issue. Its `sort_date` is null.
+- The final JoCS paper has no verified exact online date. It stays last in
+  Evolutionary Computation, retaining its 2018 citation year. Its `sort_date` is null.
   No date is inferred from its DOI registration or author upload timestamp.
 - The frozen original-profile page, all archive source files, the two PI
   projects, awards, education, image assets and zoom code are preserved.
@@ -43,7 +45,7 @@ not acceptance or the event date. IJCINI uses the publisher's publication date
 2021-10-01; the page does not separately identify an online-first date. The
 publisher date is preferred over conflicting Crossref print metadata.
 
-## Verified ordering and primary sources
+## Verified dates and primary sources
 
 | Paper | Sort date | Primary evidence |
 | --- | --- | --- |
