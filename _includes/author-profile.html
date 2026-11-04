@@ -7,7 +7,7 @@
 <div itemscope itemtype="http://schema.org/Person" class="profile_box">
 
   <div class="author__avatar">
-    <img src="{{ author.avatar | relative_url }}" class="author__photo" alt="{% if language == 'zh' %}{{ author.name_cn }}{% else %}{{ author.name }}{% endif %}" width="512" height="512">
+    <img src="{{ author.avatar | relative_url }}" class="author__photo" alt="{% if language == 'zh' %}{{ author.name_cn }}{% else %}{{ author.name }}{% endif %}" width="{{ author.avatar_width | default: 512 }}" height="{{ author.avatar_height | default: 512 }}">
   </div>
 
   <div class="author__content">

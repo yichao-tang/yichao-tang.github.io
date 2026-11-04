@@ -1,5 +1,17 @@
 # Website restore points
 
+## Before restoring the portrait aspect ratio on November 4, 2026
+
+- Commit: `ac258c1b5065cccc5dbf36b2927f4bfceda725b8`
+- Backup branch: [`backup/pre-portrait-ratio-2026-11-04`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-portrait-ratio-2026-11-04)
+- Local source ZIP outside the checkout: `homepage-before-portrait-ratio-2026-11-04.zip`.
+
+The square image remains at `images/portrait-2026-11.jpg`. To restore it, set
+`author.avatar` to that path and `author.avatar_height` to 512 in `_config.yml`.
+The portrait version uses the complete original framing, resized to 512 by 640,
+matching its original approximately 4:5 proportions. Rounded corners and favicon
+are unchanged.
+
 ## Before the portrait update of November 4, 2026
 
 - Commit: `f7ce474620c317cd11c14b0b2c6aa99ed4d87e21`

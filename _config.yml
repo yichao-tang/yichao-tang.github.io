@@ -26,7 +26,9 @@ baidu_site_verification  : code-ZxFK3f4pfb
 author:
   name             : "Yichao Tang"
   name_cn          : "汤毅超"
-  avatar           : "images/portrait-2026-11.jpg"
+  avatar           : "images/portrait-2026-11-4x5.jpg"
+  avatar_width     : 512
+  avatar_height    : 640
   bio              : "Robust Watermarking; Reversible Data Hiding; Generative AI Security"
   location         : "Guangzhou, China"
   employer         :
