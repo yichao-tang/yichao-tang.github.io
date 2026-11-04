@@ -1,5 +1,22 @@
 # Website restore points
 
+## Before the browser-tab icon update of November 4, 2026
+
+Only the browser-tab favicon references and new TANG icon files changed.
+The profile portrait, page content, layout and installed-app icons were kept.
+
+- Commit: `2be90c318ebd8e87a8aa009c4116d6a28c90d281`
+- Backup branch: [`backup/pre-portrait-icon-2026-11-04`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-portrait-icon-2026-11-04)
+- [Download the saved source ZIP](https://github.com/yichao-tang/yichao-tang.github.io/archive/2be90c318ebd8e87a8aa009c4116d6a28c90d281.zip)
+
+Local copies outside the checkout are `homepage-before-portrait-icon-2026-11-04.zip`
+and the verified complete-history `homepage-before-portrait-icon-2026-11-04.bundle`.
+The branch name reflects the initial request; the author subsequently chose to
+keep the existing portrait. To undo only this icon update, revert its merged
+pull request and merge the resulting restore pull request. For an exact saved
+site restoration, follow the clean-checkout procedure below using this commit.
+Do not force-push or alter the backup branches.
+
 ## Before restoring research-topic groups on October 30, 2026
 
 The author chose the original research-topic grouping and removal of the
