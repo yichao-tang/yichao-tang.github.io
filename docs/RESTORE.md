@@ -1,5 +1,16 @@
 # Website restore points
 
+## Before the portrait update of November 4, 2026
+
+- Commit: `f7ce474620c317cd11c14b0b2c6aa99ed4d87e21`
+- Backup branch: [`backup/pre-avatar-2026-11-04`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-avatar-2026-11-04)
+- [Download the saved source ZIP](https://github.com/yichao-tang/yichao-tang.github.io/archive/f7ce474620c317cd11c14b0b2c6aa99ed4d87e21.zip)
+
+The local archive is `homepage-before-avatar-2026-11-04.zip` outside the checkout.
+The original portrait file is retained. To restore only the previous portrait,
+set `author.avatar` in `_config.yml` to `images/android-chrome-512x512.png`
+and deploy normally. The TANG favicon is independent and remains unchanged.
+
 ## Before the browser-tab icon update of November 4, 2026
 
 Only the browser-tab favicon references and new TANG icon files changed.
