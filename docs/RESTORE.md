@@ -1,5 +1,15 @@
 # Website restore points
 
+## Before simplifying the laboratory label on November 6, 2026
+
+- Commit: `ded45883bdde01ee9047c8f8c396ba2244d5e9ae`
+- Backup branch: [`backup/pre-lab-label-2026-11-06`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-lab-label-2026-11-06)
+- Local source ZIP outside the checkout: `homepage-before-lab-label-2026-11-06.zip`.
+
+The laboratory name now appears as a link below the university in the shared
+author profile. The membership wording was removed from both home introductions.
+Restore the changed files from this saved commit and deploy normally to undo.
+
 ## Before adding the laboratory link on November 6, 2026
 
 - Commit: `70f9e45824d2fe7fa10faeb92d409b59ac802b5d`
