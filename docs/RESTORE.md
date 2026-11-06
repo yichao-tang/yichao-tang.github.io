@@ -1,5 +1,15 @@
 # Website restore points
 
+## Before adding the laboratory link on November 6, 2026
+
+- Commit: `70f9e45824d2fe7fa10faeb92d409b59ac802b5d`
+- Backup branch: [`backup/pre-lab-link-2026-11-06`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-lab-link-2026-11-06)
+- Local source ZIP outside the checkout: `homepage-before-lab-link-2026-11-06.zip`.
+
+This update adds laboratory membership and its link to the opening paragraph
+of the English and Chinese homepages. To undo only this change, restore
+`_pages/about.md` and `_pages/zh/home.md` from the saved commit and deploy normally.
+
 ## Before restoring the portrait aspect ratio on November 4, 2026
 
 - Commit: `ac258c1b5065cccc5dbf36b2927f4bfceda725b8`
