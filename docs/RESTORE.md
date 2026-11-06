@@ -1,5 +1,15 @@
 # Website restore points
 
+## Before moving the laboratory label into the introduction on November 6, 2026
+
+- Commit: `ff76b5ab106363a50087d71005b1bcb8ba2be60c`
+- Backup branch: [`backup/pre-lab-intro-2026-11-06`](https://github.com/yichao-tang/yichao-tang.github.io/tree/backup/pre-lab-intro-2026-11-06)
+- Local source ZIP outside the checkout: `homepage-before-lab-intro-2026-11-06.zip`.
+
+The laboratory link appears on a short line at the end of the opening home
+paragraph in both languages. It no longer appears in the author sidebar.
+Restore changed files from this commit and deploy normally to undo.
+
 ## Before simplifying the laboratory label on November 6, 2026
 
 - Commit: `ded45883bdde01ee9047c8f8c396ba2244d5e9ae`

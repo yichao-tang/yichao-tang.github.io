@@ -22,7 +22,6 @@ en:
     about: About Me
   position: Associate Professor
   institution: South China Agricultural University
-  laboratory: Multimedia Content Security & Intelligent Perception Laboratory
   research_interests: Robust Watermarking; Reversible Data Hiding; Generative AI Security
   location: Guangzhou, China
   email: Email
@@ -53,7 +52,6 @@ zh:
     about: 关于我
   position: 首聘副教授
   institution: 华南农业大学
-  laboratory: 多媒体内容安全与智能感知实验室
   research_interests: 鲁棒水印；可逆信息隐藏；生成式人工智能安全
   location: 中国，广州
   email: 邮箱
